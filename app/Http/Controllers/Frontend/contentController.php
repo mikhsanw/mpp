@@ -28,7 +28,7 @@ class contentController extends Controller
         'data' => Halaman::find($id),
         'doc' => File::whereMorphId($id)->orderBy('id','desc')->get(),
         );
-        return view('frontend.beranda.halaman',$arr);
+        return view('frontend.beranda.index',$arr);
     }
     public function galeri($jenis)
     {
