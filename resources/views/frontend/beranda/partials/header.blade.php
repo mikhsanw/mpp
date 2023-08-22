@@ -12,6 +12,7 @@
             <a href="#about" class="nav-item nav-link">About</a>
             <a href="#fasilitas" class="nav-item nav-link">Fasilitas</a>
             <a href="#berita" class="nav-item nav-link">Berita</a>
+            <a href="#galeri" class="nav-item nav-link">Galeri</a>
             <a href="#instansi" class="nav-item nav-link">Instansi</a>
             {{-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
