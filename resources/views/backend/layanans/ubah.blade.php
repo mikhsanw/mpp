@@ -10,8 +10,8 @@
 			{!! Form::textarea('keterangan', $data->keterangan, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
-			{!! Form::label('instansi_id', 'Masukkan Instansi_id', ['class'=>'control-label']) !!}
-			{!! Form::text('instansi_id', $data->instansi_id, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
+			{!! Form::label('instansi_id', 'Masukkan Instansi', ['class'=>'control-label']) !!}
+            {!! Form::select('instansi_id', $instansi, $data->instansi_id, array('id' => 'instansi_id', 'class' => 'form-control','placeholder' => 'Pilih Instansi')) !!}
 		</p>
         <p>
 			{!! Form::label('Foto Layanan', 'Upload foto', array('class' => 'control-label')) !!}

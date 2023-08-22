@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Model\Instansi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Validator;
 
@@ -104,7 +105,8 @@ class LayanansController extends Controller
     public function edit($id)
     {
         $data=[
-            'data'    => $this->model::find($id)
+            'data'    => $this->model::find($id),
+            'instansi' => Instansi::pluck('nama', 'id')
         ];
         return view('backend.'.$this->kode.'.ubah', $data);
     }
@@ -130,11 +132,11 @@ class LayanansController extends Controller
             else {
                 $data = $this->model::find($id);
                 $data->update($request->all());
-                if ($request->hasFile('foto_fasilitas')) {
+                if ($request->hasFile('foto_layanan')) {
                     $data->file()->update([
                         'data'      =>  [
                             'disk'      => config('filesystems.default'),
-                            'target'    => Storage::putFile($this->kode.'/foto_fasilitas/'.date('Y').'/'.date('m').'/'.date('d'),$request->file('foto_fasilitas')),
+                            'target'    => Storage::putFile($this->kode.'/foto_layanan/'.date('Y').'/'.date('m').'/'.date('d'),$request->file('foto_layanan')),
                         ]
                     ]);
                 }

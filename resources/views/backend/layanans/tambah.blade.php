@@ -11,7 +11,7 @@
 		</p>
         <p>
             {!! Form::label('instansi_id', 'Instansi', array('class' => 'control-label')) !!}
-            {!! Form::select('instansi_id', array_shift(['0'=>'--pilih--'],$data), null, array('id' => 'instansi_id', 'class' => 'form-control')) !!}
+            {!! Form::select('instansi_id', $data, [], array('id' => 'instansi_id', 'class' => 'form-control','placeholder' => 'Pilih Instansi')) !!}
         </p>
         <p>
 			{!! Form::label('Foto Layanan', 'Upload foto', array('class' => 'control-label')) !!}
