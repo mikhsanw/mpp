@@ -11,8 +11,8 @@ SISTEM PEMERINTAH BERBASIS ELECTRONIC (SPBE) KABUPATEN BENGKALIS
 ### Installation
 1. Clone the repository
 2. Run `composer install`
-3. Run `php artisan key:generate`
-4. Run `copy .env.example` to `.env`
+3. Run `copy .env.example` to `.env`
+4. Run `php artisan key:generate`
 4. Create a database and configure it in `.env`
 5. Run `php artisan migrate --seed`
 6. Run `php artisan serve`
