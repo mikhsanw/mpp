@@ -1,10 +1,18 @@
 {!! Form::open(array('id' => 'frmOji', 'route' => [$halaman->kode.'.update', $data->id], 'class' => 'form account-form', 'method' => 'PUT', 'files' => 'true')) !!}
 <div class="row">
     <div class="col-md-12">
-        		<p>
+		<p>
 			{!! Form::label('nama', 'Masukkan Nama', ['class'=>'control-label']) !!}
 			{!! Form::text('nama', $data->nama, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
 		</p>
+		<p>
+			{!! Form::label('Logo Instansi', 'Upload Logo (Dimensi : 163 x 100)', array('class' => 'control-label')) !!}
+            <small class="text-danger"> * Kosongkan jika logo tak berubah</small>
+			{!! Form::file('logo_instansi', null, array('id' => 'logo_instansi', 'class' => 'form-control')) !!}
+		</p>
+		<div class="col-md-6">
+			<img src="{{$data->file?($data->file->url_stream.'?t='.time()):'#'}}" style="background: transparent url({{asset('backend/img/loading.gif')}}) no-repeat center; width: 100%"/>
+		</div>
 		<p>
 			{!! Form::label('alamat', 'Masukkan Alamat', ['class'=>'control-label']) !!}
 			{!! Form::textarea('alamat', $data->alamat, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
@@ -27,27 +35,28 @@
 		</p>
 		<p>
 			{!! Form::label('layanan', 'Masukkan Layanan', ['class'=>'control-label']) !!}
-			{!! Form::textarea('layanan', $data->layanan, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
+			{!! Form::textarea('layanan', $data->layanan, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
 			{!! Form::label('dasarhukum', 'Masukkan Dasarhukum', ['class'=>'control-label']) !!}
-			{!! Form::textarea('dasarhukum', $data->dasarhukum, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
+			{!! Form::textarea('dasarhukum', $data->dasarhukum, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
 			{!! Form::label('persyaratan', 'Masukkan Persyaratan', ['class'=>'control-label']) !!}
-			{!! Form::textarea('persyaratan', $data->persyaratan, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
+			{!! Form::textarea('persyaratan', $data->persyaratan, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
 			{!! Form::label('waktudanbiaya', 'Masukkan Waktudanbiaya', ['class'=>'control-label']) !!}
-			{!! Form::textarea('waktudanbiaya', $data->waktudanbiaya, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
+			{!! Form::textarea('waktudanbiaya', $data->waktudanbiaya, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
 			{!! Form::label('alur', 'Masukkan Alur', ['class'=>'control-label']) !!}
-			{!! Form::textarea('alur', $data->alur, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
+			{!! Form::textarea('alur', $data->alur, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
 		</p>
 
     </div>
 	{!! Form::hidden('table-list', 'datatable', array('id' => 'table-list')) !!}
+
 </div>
 <div class="row">
 	<div class="col-md-12">

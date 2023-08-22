@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Model\Instansi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Validator;
 
-class InstansisController extends Controller
+class LayanansController extends Controller
 {
     public function index()
     {
+        
         return view('backend.'.$this->kode.'.index');
     }
 
@@ -40,7 +41,10 @@ class InstansisController extends Controller
      */
     public function create()
     {
-        return view('backend.'.$this->kode.'.tambah');
+        $data = [
+            'data' => Instansi::pluck('nama', 'id')
+        ];
+        return view('backend.'.$this->kode.'.tambah', $data);
     }
 
     /**
@@ -53,30 +57,21 @@ class InstansisController extends Controller
     {
         if ($request->ajax()) {
             $validator=Validator::make($request->all(), [
-					'nama' => 'required|'.config('master.regex.text'),
-					'alamat' => 'required|'.config('master.regex.text'),
-					'telepon' => 'required',
-					'tracking' => 'required|'.config('master.regex.text'),
-					'email' => 'required',
-					'website' => 'required|'.config('master.regex.text'),
-					'layanan' => 'required|'.config('master.regex.json'),
-					'dasarhukum' => 'required|'.config('master.regex.json'),
-					'persyaratan' => 'required|'.config('master.regex.json'),
-					'waktudanbiaya' => 'required|'.config('master.regex.json'),
-					'alur' => 'required|'.config('master.regex.json'),
-                    'logo_instansi' => 'required|mimes:jpg,jpeg,png'
+					'nama' => 'required|'.config('master.regex.json'),
+					'keterangan' => 'required|'.config('master.regex.json'),
+					'instansi_id' => 'required|'.config('master.regex.json'),
                 ]);
             if ($validator->fails()) {
                 $respon=['status'=>false, 'pesan'=>$validator->messages()];
             }
             else {
                 $data = $this->model::create($request->all());
-                if ($request->hasFile('logo_instansi')) {
+                if ($request->hasFile('foto_layanan')) {
                     $data->file()->create([
-                        'name'      => 'logo_instansi',
+                        'name'      => 'foto_layanan',
                         'data'      =>  [
                         'disk'      => config('filesystems.default'),
-                        'target'    => Storage::putFile($this->kode.'/logo_instansi/'.date('Y').'/'.date('m').'/'.date('d'),$request->file('logo_instansi')),
+                        'target'    => Storage::putFile($this->kode.'/foto_layanan/'.date('Y').'/'.date('m').'/'.date('d'),$request->file('foto_layanan')),
                         ]
                     ]);
                 }
@@ -125,18 +120,9 @@ class InstansisController extends Controller
     {
         if ($request->ajax()) {
             $validator=Validator::make($request->all(), [
-                'nama' => 'required|'.config('master.regex.text'),
-                'alamat' => 'required|'.config('master.regex.text'),
-                'telepon' => 'required',
-                'tracking' => 'required|'.config('master.regex.text'),
-                'email' => 'required',
-                'website' => 'required|'.config('master.regex.text'),
-                'layanan' => 'required|'.config('master.regex.json'),
-                'dasarhukum' => 'required|'.config('master.regex.json'),
-                'persyaratan' => 'required|'.config('master.regex.json'),
-                'waktudanbiaya' => 'required|'.config('master.regex.json'),
-                'alur' => 'required|'.config('master.regex.json'),
-                'logo_instansi'        => 'required|mimes:jpg,jpeg,png'
+                					'nama' => 'required|'.config('master.regex.json'),
+					'keterangan' => 'required|'.config('master.regex.json'),
+					'instansi_id' => 'required|'.config('master.regex.json'),
             ]);
             if ($validator->fails()) {
                 $response=['status'=>FALSE, 'pesan'=>$validator->messages()];
@@ -144,12 +130,12 @@ class InstansisController extends Controller
             else {
                 $data = $this->model::find($id);
                 $data->update($request->all());
-                if ($request->hasFile('logo_instansi')) {
+                if ($request->hasFile('foto_fasilitas')) {
                     $data->file()->update([
-                            'data'      =>  [
-                                'disk'      => config('filesystems.default'),
-                                'target'    => Storage::putFile($this->kode.'/logo_instansi/'.date('Y').'/'.date('m').'/'.date('d'),$request->file('logo_instansi')),
-                            ]
+                        'data'      =>  [
+                            'disk'      => config('filesystems.default'),
+                            'target'    => Storage::putFile($this->kode.'/foto_fasilitas/'.date('Y').'/'.date('m').'/'.date('d'),$request->file('foto_fasilitas')),
+                        ]
                     ]);
                 }
                 $respon=['status'=>true, 'pesan'=>'Data berhasil diubah'];

@@ -124,5 +124,17 @@ Route::group(['prefix' => config('master.url.admin')], function () {
 		});
 		Route::resource('instansis', 'InstansisController');
 
+		Route::prefix('fasilitas')->as('fasilitas')->group(function () {
+			Route::get('/data', 'FasilitasController@data');
+			Route::get('/hapus/{id}', 'FasilitasController@hapus');
+		});
+		Route::resource('fasilitas', 'FasilitasController');
+
+		Route::prefix('layanans')->as('layanans')->group(function () {
+			Route::get('/data', 'LayanansController@data');
+			Route::get('/hapus/{id}', 'LayanansController@hapus');
+		});
+		Route::resource('layanans', 'LayanansController');
+
 	});
 });

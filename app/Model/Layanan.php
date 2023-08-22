@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Instansi extends Model
+class Layanan extends Model
 {
     use HasFactory, SoftDeletes, Uuid;
 
@@ -16,9 +16,14 @@ class Instansi extends Model
     ];
 
     protected $fillable=[
-        'id', 'nama', 'alamat', 'telepon', 'tracking', 'email', 'website', 'layanan', 'dasarhukum', 'persyaratan', 'waktudanbiaya', 'alur',
+        'id', 'nama', 'keterangan', 'instansi_id',
     ];
     
+	public function instansi()
+	{
+		return $this->belongsTo('App\Model\Instansi');
+	}
+
     public function file()
     {
         return $this->morphOne(File::class, 'morph');

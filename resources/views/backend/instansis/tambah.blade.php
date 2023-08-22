@@ -7,6 +7,10 @@
 			{!! Form::text('nama', null, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
+			{!! Form::label('logo_instansi', 'Upload Logo (Dimensi : 163 x 100)', array('class' => 'control-label')) !!}
+			{!! Form::file('logo_instansi', null, array('id' => 'logo_instansi', 'class' => 'form-control')) !!}
+		</p>
+		<p>
 			{!! Form::label('alamat', 'Masukkan Alamat', ['class'=>'control-label']) !!}
 			{!! Form::textarea('alamat', null, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
 		</p>
