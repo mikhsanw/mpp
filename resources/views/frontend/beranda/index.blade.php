@@ -1,41 +1,27 @@
-@extends('frontend.beranda.partials.main')
+@extends('layouts.frontend.main')
+@section('title', 'Beranda')
+@section('img', ($aplikasi->file_logo?(asset($aplikasi->file_logo->url_stream)):''))
 @section('content')
     <!-- Carousel Start -->
     <div class="container-fluid px-0 mb-5">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="{{asset('assets')}}/img/carousel-1.jpg" alt="Image">
+                @foreach($slider as $row => $item)
+                <div class="carousel-item {{$row==0?'active':''}}">
+                    <img class="w-100" src="{{asset($item->file->url_stream)}}" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 text-start">
-                                    <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">25 Years
-                                        of Working Experience</p>
-                                    <h1 class="display-1 text-white mb-5 animated slideInRight">Industrial Solution
-                                        Providing Company</h1>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
+                                    <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">Mal Pelayanan Publik</p>
+                                    <h1 class="display-1 text-white mb-5 animated slideInRight">{{$item->nama}}</h1>
+                                    <!-- <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="{{asset('assets')}}/img/carousel-2.jpg" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-10 text-start">
-                                    <p class="fs-5 fw-medium text-primary text-uppercase animated slideInRight">25 Years
-                                        of Working Experience</p>
-                                    <h1 class="display-1 text-white mb-5 animated slideInRight">The Best Reliable
-                                        Industry Solution</h1>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInRight">Explore More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -92,7 +78,7 @@
                                 </div>
                                 <div class="ms-3">
                                     <p class="mb-2">Email us</p>
-                                    <h6 class="mb-0">mpp@bengkaliskab.go.id</h6>
+                                    <h6 class="mb-0">{!!($kontak->filterkontak('email')->link ?? '')!!}</h6>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +89,7 @@
                                 </div>
                                 <div class="ms-3">
                                     <p class="mb-2">Call us</p>
-                                    <h6 class="mb-0">+012 345 6789</h6>
+                                    <h6 class="mb-0">{!!($kontak->filterkontak('telp')->link ?? '')!!}</h6>
                                 </div>
                             </div>
                         </div>
@@ -516,9 +502,8 @@
                         <div class="btn-square bg-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
                             <i class="fa fa-phone-alt fa-2x text-primary"></i>
                         </div>
-                        <h4 class="mb-3">Phone Number</h4>
-                        <p class="mb-2">+012 345 67890</p>
-                        <p class="mb-4">+012 345 67890</p>
+                        <h4 class="mb-3">Nomor Telepon</h4>
+                        <p class="mb-2">{!!($kontak->filterkontak('telp')->link ?? '')!!}</p>
                         <a class="btn btn-primary px-4" href="tel:+0123456789">Call Now <i
                                 class="fa fa-arrow-right ms-2"></i></a>
                     </div>
@@ -528,9 +513,9 @@
                         <div class="btn-square bg-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
                             <i class="fa fa-envelope-open fa-2x text-primary"></i>
                         </div>
-                        <h4 class="mb-3">Email Address</h4>
-                        <p class="mb-2">info@example.com</p>
-                        <p class="mb-4">support@example.com</p>
+                        <h4 class="mb-3">Alamat Email</h4>
+                        <p class="mb-2">{!!($kontak->filterkontak('email')->link ?? '')!!}</p>
+                        <!-- <p class="mb-4">support@example.com</p> -->
                         <a class="btn btn-primary px-4" href="mailto:info@example.com">Email Now <i
                                 class="fa fa-arrow-right ms-2"></i></a>
                     </div>
@@ -540,10 +525,9 @@
                         <div class="btn-square bg-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
                             <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
                         </div>
-                        <h4 class="mb-3">Office Address</h4>
-                        <p class="mb-2">+012 345 67890</p>
-                        <p class="mb-4">+012 345 67890</p>
-                        <a class="btn btn-primary px-4" href="https://goo.gl/maps/FsznshxgnULBGgkN9"
+                        <h4 class="mb-3">Alamat</h4>
+                        <p class="mb-2">{!!($kontak->filterkontak('alamat')->isi ?? '')!!}</p>
+                        <a class="btn btn-primary px-4" href="{!!($kontak->filterkontak('alamat')->link ?? '')!!}"
                             target="blank">Direction <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -551,7 +535,7 @@
             <div class="row mb-5">
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
                     <iframe class="w-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15954.051660848709!2d102.11749254726503!3d1.4657016263280322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d15e36b4c4ad2f%3A0xfe6a8b2b1d4df01f!2sDinas%20Penanaman%20Modal%20dan%20Pelayanan%20Terpadu%20Satu%20Pintu!5e0!3m2!1sid!2sid!4v1692782649492!5m2!1sid!2sid"
                         frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                 </div>
