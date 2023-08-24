@@ -77,7 +77,7 @@ return [
     'jenis_halaman'=>[
         '0'                 => 'Tentang',
         '1'                 => 'Instansi',
-        '2'                 => 'Maklumat Pelayanan',
+        '2'                 => 'Berita',
         '3'                 => 'Fasilitas',
         '4'                 => 'Galeri',
         '5'                 => 'Statistik',

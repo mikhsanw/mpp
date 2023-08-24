@@ -31,6 +31,8 @@ class Controller extends BaseController
         foreach($halamans as $halaman){
             if($halaman->status == 4){
                 $menu[$halaman->nama] = url('/company/page/'.$halaman->id.'/'.Help::generateSeoURL($halaman->nama));
+            }if($halaman->status == 2){
+                $menu[$halaman->nama]=url($halaman->link);
             }else{
                 $menu[$halaman->nama]=($halaman->children->count() > 0) ? $halaman->children : url('/company/page/'.$halaman->id.'/'.Help::generateSeoURL($halaman->nama));
             }

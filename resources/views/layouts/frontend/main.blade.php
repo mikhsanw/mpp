@@ -3,13 +3,35 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Industro - Industrial HTML Template</title>
+    
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="author" content="{{$aplikasi->nama}}" />
+	<meta name="description" content="{{$aplikasi->singkatan.' '.$aplikasi->daerah}} - @yield('title')" />
+    <link rel="canonical" href="{{url()->full()}}" />
+	<meta property="og:locale" content="id_ID" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="@yield('title')" />
+	<meta property="og:description" content="{{$aplikasi->singkatan.' '.$aplikasi->daerah}} - @yield('title')" />
+	<meta property="og:url" content="{{url()->full()}}" />
+	<meta property="og:site_name" content="{{$aplikasi->singkatan.' '.$aplikasi->daerah}} - @yield('title')" />
+	<meta property="article:modified_time" content="{{date('Y-m-d H:i:s')}}" />
+	<meta property="og:image" content="@yield('img')" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="3 minutes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Title -->
+    @hasSection('title')
+        <title>@yield('title') | {{$aplikasi->singkatan.' '.$aplikasi->daerah}}</title>
+    @else
+        <title>{{$aplikasi->nama.' '.$aplikasi->daerah}}</title>
+    @endif
 
     <!-- Favicon -->
-    <link href="{{asset('assets')}}/img/favicon.ico" rel="icon">
+    @if($aplikasi->file_favicon)
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset($aplikasi->file_favicon->url_stream)??'' }}">
+    @endif
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +53,9 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('assets')}}/css/style.css" rel="stylesheet">
+
+    @stack('css')
+
 </head>
 
 <body>
@@ -48,16 +73,19 @@
             <div class="col-lg-6 ps-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center text-white">
                     <span>Follow Us:</span>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-link text-light" href="{!!($kontak->filterkontak('facebook')->link ?? '#')!!}"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href="{!!($kontak->filterkontak('twitter')->link ?? '#')!!}"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href="{!!($kontak->filterkontak('youtube')->link ?? '#')!!}"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-link text-light" href="{!!($kontak->filterkontak('instagram')->link ?? '#')!!}"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="col-lg-6 text-end">
                 <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
-                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
-                    <span class="fs-5 fw-bold">+012 345 6789</span>
+                    <span class="fs-5 fw-bold me-2">
+                        <i class="fa fa-phone-alt me-2"></i>
+                        <!-- Call Us: -->
+                    </span>
+                    <span class="fs-5 fw-bold">{!!($kontak->filterkontak('telp')->link ?? '')!!}</span>
                 </div>
             </div>
         </div>
@@ -77,11 +105,8 @@
     <!-- Copyright Start -->
     <div class="container-fluid copyright bg-dark py-4">
         <div class="container text-center">
-            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold" href="#">Your Site Name</a>, All Right Reserved.
+            <p class="mb-2">Development By &copy; <a class="fw-semi-bold" href="#">Tim PBE Diskominfotik Kabupaten Bengkalis 2023</a>, All Right Reserved.
             </p>
-            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-            <p class="mb-0">Designed By <a class="fw-semi-bold" href="https://htmlcodex.com">HTML Codex</a> Distributed
-                By: <a href="https://themewagon.com">ThemeWagon</a> </p>
         </div>
     </div>
     <!-- Copyright End -->
@@ -103,6 +128,16 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('assets')}}/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.aktif').click(function(){
+                $('.aktif').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+    @stack('js')
+
 </body>
 
 </html>

@@ -1,5 +1,4 @@
 @extends('layouts.frontend.main')
-@section('title', 'Beranda')
 @section('img', ($aplikasi->file_logo?(asset($aplikasi->file_logo->url_stream)):''))
 @section('content')
     <!-- Carousel Start -->
@@ -490,7 +489,7 @@
     <!-- Testimonial End -->
 
     <!-- Contact Start -->
-    <div class="container-xxl py-5" id="contact">
+    <div class="container-xxl py-5" id="kontak">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Contact</p>
