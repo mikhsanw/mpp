@@ -17,7 +17,8 @@ return [
             "portal",
             "instansis",
             "fasilitas",
-            "layanans"
+            "layanans",
+            "berita",
         ],
     ]
 ];

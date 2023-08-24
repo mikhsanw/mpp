@@ -266,8 +266,23 @@ class menuSeeder extends Seeder
               "title": null,
               "keterangan": null
             }
-          }
-          
+          },
+          {
+            "id": 41,
+            "parent_id": null,
+            "kode": "berita",
+            "nama": "Berita",
+            "link": "berita",
+            "icon": "far fa-newspaper",
+            "tampil": 1,
+            "urut": 8,
+            "status": 1,
+            "detail": {
+              "model": "Berita",
+              "title": "",
+              "keterangan": ""
+            }
+          },
         ]';
         foreach (json_decode($isi, TRUE) as $menu) {
             Menu::create($menu);

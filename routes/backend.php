@@ -103,6 +103,13 @@ Route::group(['prefix' => config('master.url.admin')], function () {
         });
         Route::resource('portal', 'portalController');
 
+        // berita
+        Route::prefix('berita')->as('berita')->group(function () {
+            Route::get('/data', 'beritaController@data');
+            Route::get('/hapus/{id}', 'beritaController@hapus');
+        });
+        Route::resource('berita', 'beritaController');
+        
         // upload
         Route::prefix('upload')->as('upload')->group(function () {
             Route::get('/data/{id}', 'uploadController@data');
