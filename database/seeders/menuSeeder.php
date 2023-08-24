@@ -218,7 +218,56 @@ class menuSeeder extends Seeder
               "title": "",
               "keterangan": ""
             }
+          },
+          {
+            "id": 38,
+            "parent_id": null,
+            "kode": "instansis",
+            "nama": "Instansi",
+            "link": "instansis",
+            "icon": "fas fa-building",
+            "tampil": 1,
+            "urut": 6,
+            "status": 1,
+            "detail": {
+              "model": "Instansi",
+              "title": null,
+              "keterangan": null
+            }
+          },
+          {
+            "id": 39,
+            "parent_id": null,
+            "kode": "fasilitas",
+            "nama": "Fasilitas",
+            "link": "fasilitas",
+            "icon": "fas fa-smile-beam",
+            "tampil": 1,
+            "urut": 7,
+            "status": 1,
+            "detail": {
+              "model": "Fasilitas",
+              "title": "",
+              "keterangan": ""
+            }
+          },
+          {
+            "id": 40,
+            "parent_id": null,
+            "kode": "layanans",
+            "nama": "Layanan",
+            "link": "layanans",
+            "icon": "fas fa-desktop",
+            "tampil": 1,
+            "urut": 8,
+            "status": 1,
+            "detail": {
+              "model": "Layanan",
+              "title": null,
+              "keterangan": null
+            }
           }
+          
         ]';
         foreach (json_decode($isi, TRUE) as $menu) {
             Menu::create($menu);
