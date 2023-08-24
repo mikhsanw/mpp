@@ -2,7 +2,22 @@
 return [
     'root'            =>[
         'menu'=>[
-            "pengaturanroot", "extra", "menu", "aksesgrup", "user", "aksesmenu", "slider", "kontak", "halaman", "layanans", "aplikasi", "instansis", "fasilitas","pengaturan"
+            "pengaturanroot",
+            "extra",
+            "menu",
+            "aksesgrup",
+            "user",
+            "aksesmenu",
+            "pengaturan",
+            "slider",
+            "kontak",
+            "aplikasi",
+            "halaman",
+            "upload",
+            "portal",
+            "instansis",
+            "fasilitas",
+            "layanans"
         ],
     ]
 ];

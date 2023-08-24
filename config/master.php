@@ -11,8 +11,8 @@ return [
     */
 
     'aplikasi' =>   [
-                        'nama'          => 'Sistem Pemerintah Berbasis Elektronik',
-                        'singkatan'     => 'SPBE',
+                        'nama'          => 'Mal Pelayanan Publik',
+                        'singkatan'     => 'MPP',
                         'daerah'        => 'Kabupaten Bengkalis', // HARUS HURUF BESAR
                         'kota'          => 'Bengkalis',
                         'level'         => 'Kabupaten', // Kabupaten, kota, provinsi (default)
@@ -49,6 +49,9 @@ return [
         'uuid'=>'regex:/^[a-zA-Z0-9\-\/ ]+$/',
         'text'=>'regex:/^[a-zA-Z0-9\.\-\/\:\"\,\ ]+$/',
         'json'=>'regex:/^[a-zA-Z0-9\.\-\/\:\{\}\(\)\"\,\[\]\_\<\>\&\;\?\!\ ]+$/',
+        'url'=>'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+        'number'=>'regex:/^[0-9]+$/',
+        
     ],
     'status_pengumuman'=>[
         'danger'=>'Sangat Penting',
