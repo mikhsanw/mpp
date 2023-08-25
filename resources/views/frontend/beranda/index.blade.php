@@ -106,29 +106,29 @@
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
                 <div class="text-center border p-5">
                     <i class="fa fa-certificate fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">25</h1>
+                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">{{$jumlah['instansi']}}</h1>
                     <span class="fs-5 fw-semi-bold text-white">Jumlah Instansi</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.3s">
                 <div class="text-center border p-5">
                     <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">135</h1>
+                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">{{$jumlah['layanan']}}</h1>
                     <span class="fs-5 fw-semi-bold text-white">Jumlah Pelayanan</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.5s">
                 <div class="text-center border p-5">
                     <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">957</h1>
+                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">0</h1>
                     <span class="fs-5 fw-semi-bold text-white">Jumlah Loket</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.7s">
                 <div class="text-center border p-5">
                     <i class="fa fa-check-double fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">1839</h1>
-                    <span class="fs-5 fw-semi-bold text-white">Juml;ah Antrian Hari Ini</span>
+                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">0</h1>
+                    <span class="fs-5 fw-semi-bold text-white">Jumlah Antrian Hari Ini</span>
                 </div>
             </div>
         </div>
@@ -229,70 +229,32 @@
     <div class="container-xxl py-5" id="berita">
         <div class="container">
             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="fw-medium text-uppercase text-primary mb-2">Our News</p>
+                <!-- <p class="fw-medium text-uppercase text-primary mb-2">Our News</p> -->
                 <h1 class="display-5 mb-4">Berita Seputar MPP Kab. Bengkalis</h1>
             </div>
             <div class="row gy-5 gx-4">
+                @foreach($berita as $item)
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/service-1.jpg" alt="">
+                        <img class="img-fluid" src="{{$item->file->url_stream}}" alt="">
                         <div class="service-img">
-                            <img class="img-fluid" src="{{asset('assets')}}/img/service-1.jpg" alt="">
+                            <img class="img-fluid" src="{{$item->file->url_stream}}" alt="">
                         </div>
                         <div class="service-detail">
                             <div class="service-title">
                                 <hr class="w-25">
-                                <h3 class="mb-0">Civil & Gas Engineering</h3>
+                                <h3 class="mb-0">{{$item->nama}}</h3>
                                 <hr class="w-25">
                             </div>
                             <div class="service-text">
-                                <p class="text-white mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                    lorem sed diam stet diam sed stet.</p>
+                                <p class="text-white mb-0">{!!Help::shortDescription($item->isi,10)!!}</p>
                             </div>
                         </div>
-                        <a class="btn btn-light" href="">Read More</a>
+                        <a class="btn btn-light" href="{{url('company/berita-detail/'.$item->id)}}">Selengkapnya</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/service-2.jpg" alt="">
-                        <div class="service-img">
-                            <img class="img-fluid" src="{{asset('assets')}}/img/service-2.jpg" alt="">
-                        </div>
-                        <div class="service-detail">
-                            <div class="service-title">
-                                <hr class="w-25">
-                                <h3 class="mb-0">Power & Energy Engineering</h3>
-                                <hr class="w-25">
-                            </div>
-                            <div class="service-text">
-                                <p class="text-white mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                    lorem sed diam stet diam sed stet.</p>
-                            </div>
-                        </div>
-                        <a class="btn btn-light" href="">Read More</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/service-3.jpg" alt="">
-                        <div class="service-img">
-                            <img class="img-fluid" src="{{asset('assets')}}/img/service-3.jpg" alt="">
-                        </div>
-                        <div class="service-detail">
-                            <div class="service-title">
-                                <hr class="w-25">
-                                <h3 class="mb-0">Plumbing & Water Treatment</h3>
-                                <hr class="w-25">
-                            </div>
-                            <div class="service-text">
-                                <p class="text-white mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos
-                                    lorem sed diam stet diam sed stet.</p>
-                            </div>
-                        </div>
-                        <a class="btn btn-light" href="">Read More</a>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
     </div>

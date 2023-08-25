@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Model\Halaman;
 use App\Model\foto;
+use App\Model\Berita;
+use App\Model\Halaman;
+use App\Model\Layanan;
+use App\Model\Instansi;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 class frontendController extends Controller
 {
     /**
@@ -17,6 +21,11 @@ class frontendController extends Controller
     {   
         $data = array(
             'slider' => foto::where('status',config('master.status_foto.slider'))->orderBy('id','desc')->take(5)->get(),
+            'berita' => Berita::where('status',0)->orderBy('tanggal', 'desc')->take(3)->get(),
+            'jumlah' => [
+                'instansi' => Instansi::count(),
+                'layanan' => Layanan::count(),
+            ],
             'tentang' => Halaman::where('jenis',0)->whereNull('parent_id')->first()
         );
         return view('frontend.beranda.index',$data);

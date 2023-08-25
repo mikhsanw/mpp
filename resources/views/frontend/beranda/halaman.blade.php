@@ -2,30 +2,18 @@
 @section('title', $data->nama)
 @section('img', ($aplikasi->file_logo?(asset($aplikasi->file_logo->url_stream)):''))
 @section('content')
-<section class="page-title title-bg22">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <h2>{{$data->nama}}</h2>
-            <ul>
-                <li>
-                    <a href="{{url('/')}}">Beranda</a>
-                </li>
-                @if($data->parentRecursive)
-                {!!$data->createMenuTree($data->parentRecursive)!!}
-                <li>{{$data->nama}}</li>
-                @else
-                <li>{{$data->nama}}</li>
-
-                @endif
-            </ul>
-        </div>
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+    <div class="container py-5">
+        <h1 class="display-3 text-white  slideInRight">{{$data->nama}}</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb  slideInRight mb-0">
+                <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="#">Halaman</a></li>
+                <li class="breadcrumb-item active" aria-current="page">$data->nama</li>
+            </ol>
+        </nav>
     </div>
-    <div class="lines">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-</section>
+</div>
 
 @if($data->status==4)
 <section class="categories-section faq-section pt-5 pb-70">
@@ -172,34 +160,6 @@
 </section><!-- #content end -->
 @endif
 
-<div class="modal fade" id="dokumen-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Modal</h4>
-                <button type="button" class="btn-close btn-sm" data-bs-dismiss="modal" aria-hidden="true"></button>
-            </div>
-            <div class="modal-body">
-                <iframe width="100%" height="600px"></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    var modalShow = document.getElementById('dokumen-modal-lg')
-    modalShow.addEventListener('show.bs.modal', function (event) {
-        var button = event.relatedTarget
-        var recipient = button.getAttribute('data-bs-whatever')
-        var title = button.getAttribute('data-bs-title')
-        var modalTitle = modalShow.querySelector('.modal-title')
-        modalTitle.textContent = 'Dokumen ' + title
-        var makeIframe = modalShow.querySelector(".modal-body iframe");
-        makeIframe.setAttribute("src", recipient);
-    })
-
-</script>
 @endsection
 @push('css')
 <style>
