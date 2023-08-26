@@ -43,6 +43,8 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css">
+    
 
     <!-- Libraries Stylesheet -->
     <link href="{{asset('assets')}}/lib/animate/animate.min.css" rel="stylesheet">
@@ -120,6 +122,7 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
     <script src="{{asset('assets')}}/lib/wow/wow.min.js"></script>
     <script src="{{asset('assets')}}/lib/easing/easing.min.js"></script>
     <script src="{{asset('assets')}}/lib/waypoints/waypoints.min.js"></script>
@@ -137,7 +140,13 @@
         });
     </script>
     @stack('js')
-
+    <script>
+        lightGallery(document.getElementById('lightgallery'), {
+        speed: 500,
+        mode: 'lg-fade',
+        selector: '.img-fluid',
+    });
+    </script>
 </body>
 
 </html>

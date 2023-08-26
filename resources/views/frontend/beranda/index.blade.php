@@ -8,7 +8,7 @@
                 @foreach($slider as $row => $item)
                 <div class="carousel-item {{$row==0?'active':''}}">
                     <img class="w-100" src="{{asset($item->file->url_stream)}}" alt="Image">
-                    <div class="carousel-caption">
+                    {{-- <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-lg-10 text-start">
@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 @endforeach
             </div>
@@ -57,7 +57,7 @@
                     </p>
                     <div class="d-flex align-items-center mb-4">
                         <div class="flex-shrink-0 bg-primary p-4">
-                            <h1 class="display-2">25</h1>
+                            <h1 class="display-2">{{$jumlah['instansi']}}</h1>
                             <h5 class="text-white">Instansi</h5>
                             <h5 class="text-white">Siap Melayani</h5>
                         </div>
@@ -243,7 +243,7 @@
                         <div class="service-detail">
                             <div class="service-title">
                                 <hr class="w-25">
-                                <h3 class="mb-0">{{$item->nama}}</h3>
+                                <h6 class="mb-0">{{$item->nama}}</h6>
                                 <hr class="w-25">
                             </div>
                             <div class="service-text">
@@ -253,8 +253,7 @@
                         <a class="btn btn-light" href="{{url('company/berita-detail/'.$item->id)}}">Selengkapnya</a>
                     </div>
                 </div>
-                @endforeach
-                
+                @endforeach                
             </div>
         </div>
     </div>
@@ -267,43 +266,16 @@
             <p class="fw-medium text-uppercase text-primary mb-2">Our Galery</p>
             <h1 class="display-5 text-white mb-5">Galeri MPP Kab. Bengkalis</h1>
         </div>
-        <div class="owl-carousel project-carousel wow fadeIn" data-wow-delay="0.1s">
-            <a class="project-item" href="">
-                <img class="img-fluid" src="{{asset('assets')}}/img/project-1.jpg" alt="">
+        <div class="owl-carousel project-carousel wow fadeIn" data-wow-delay="0.1s" id="lightgallery">
+
+            @foreach ($foto as $item)    
+            <a class="project-item" href="{{$item->file->url_stream}}">
+                <img class="img-fluid" src="{{$item->file->url_stream}}" alt="">
                 <div class="project-title">
-                    <h5 class="text-primary mb-0">Auto Engineering</h5>
+                    <h6 class="text-primary mb-0" style="font-size: 11pt;">{{$item->nama}}</h6>
                 </div>
             </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="{{asset('assets')}}/img/project-2.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Civil Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="{{asset('assets')}}/img/project-3.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Gas Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="{{asset('assets')}}/img/project-4.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Power Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="{{asset('assets')}}/img/project-5.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Energy Engineering</h5>
-                </div>
-            </a>
-            <a class="project-item" href="">
-                <img class="img-fluid" src="{{asset('assets')}}/img/project-6.jpg" alt="">
-                <div class="project-title">
-                    <h5 class="text-primary mb-0">Water Engineering</h5>
-                </div>
-            </a>
+            @endforeach
         </div>
     </div>
     <!-- Project End -->
@@ -317,17 +289,19 @@
                 <h1 class="display-5 mb-5">Instansi Pada MPP Kab. Bengkalis</h1>
             </div>
             <div class="row g-4">
+                @foreach ($instansi as $item)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/team-1.jpg" alt="">
+                        <img class="img-fluid" src="{{asset($item->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
                         <div class="d-flex">
-                            <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
+                            <a href="{{url('', $item->id)}}">
+                                <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
                                 <i class="fa fa-2x fa-share text-white"></i>
-                            </div>
+                            </div></a>
                             <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
                                 style="height: 90px;">
-                                <h5>Rob Miller</h5>
-                                <span class="text-primary">CEO & Founder</span>
+                                <h5>{{$item->nama}}</h5>
+                                <span class="text-primary">{{$item->alamat}}</span>
                                 <div class="team-social">
                                     <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
                                             class="fab fa-facebook-f"></i></a>
@@ -340,7 +314,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                @endforeach
+
+                {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <img class="img-fluid" src="{{asset('assets')}}/img/team-2.jpg" alt="">
                         <div class="d-flex">
@@ -385,7 +361,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

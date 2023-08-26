@@ -371,9 +371,9 @@ h6,
 .service-item .service-img {
     position: absolute;
     padding: 12px;
-    width: 130px;
-    height: 130px;
-    top: -65px;
+    width: 300px;
+    height: 100px;
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
     background: #FFFFFF;
