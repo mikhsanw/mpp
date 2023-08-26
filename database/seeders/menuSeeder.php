@@ -282,7 +282,7 @@ class menuSeeder extends Seeder
               "title": "",
               "keterangan": ""
             }
-          },
+          }
         ]';
         foreach (json_decode($isi, TRUE) as $menu) {
             Menu::create($menu);
