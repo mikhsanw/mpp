@@ -360,7 +360,7 @@
     <div class="container-xxl py-5" id="kontak">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="fw-medium text-uppercase text-primary mb-2">Contact</p>
+                <p class="fw-medium text-uppercase text-primary mb-2">Kontak</p>
                 <h1 class="display-5 mb-5">Jangan Sungkan Untuk Menghubungi</h1>
             </div>
             <div class="row g-5 justify-content-center mb-5">
@@ -371,7 +371,7 @@
                         </div>
                         <h4 class="mb-3">Nomor Telepon</h4>
                         <p class="mb-2">{!!($kontak->filterkontak('telp')->link ?? '')!!}</p>
-                        <a class="btn btn-primary px-4" href="tel:{!!($kontak->filterkontak('telp')->link ?? '')!!}">Call Now <i
+                        <a class="btn btn-primary px-4" href="tel:{!!($kontak->filterkontak('telp')->link ?? '')!!}">Hubungi Sekarang <i
                                 class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -383,7 +383,7 @@
                         <h4 class="mb-3">Alamat Email</h4>
                         <p class="mb-2">{!!($kontak->filterkontak('email')->link ?? '')!!}</p>
                         <!-- <p class="mb-4">support@example.com</p> -->
-                        <a class="btn btn-primary px-4" href="mailto:{!!($kontak->filterkontak('email')->link ?? '')!!}">Email Now <i
+                        <a class="btn btn-primary px-4" href="mailto:{!!($kontak->filterkontak('email')->link ?? '')!!}">Kirim Surel <i
                                 class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -395,7 +395,7 @@
                         <h4 class="mb-3">Alamat</h4>
                         <p class="mb-2">{!!($kontak->filterkontak('alamat')->isi ?? '')!!}</p>
                         <a class="btn btn-primary px-4" href="{!!($kontak->filterkontak('alamat')->link ?? '')!!}"
-                            target="blank">Direction <i class="fa fa-arrow-right ms-2"></i></a>
+                            target="blank">Menuju Alamat <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
