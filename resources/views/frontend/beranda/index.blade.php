@@ -172,7 +172,7 @@
 
 
     <!-- Video Modal Start -->
-    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    {{-- <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content rounded-0">
@@ -189,7 +189,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Video Modal End -->
 
 
@@ -270,7 +270,7 @@
                         <div class="team-item">
                             <img class="img-fluid" src="{{asset($item->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
                             <div class="d-flex">
-                                <a href="{{url('', $item->id)}}">
+                                <a href="{{url('company/detail-instansi', $item->id)}}">
                                     <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
                                     <i class="fa fa-2x fa-share text-white"></i>
                                 </div></a>
@@ -278,13 +278,19 @@
                                     style="height: 90px;">
                                     <h6>{{$item->nama}}</h6>
                                     <span class="text-primary">{{$item->alamat}}</span>
-                                    <div class="team-social">
-                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                                class="fab fa-instagram"></i></a>
+                                    <div class="team-social d-flex">
+                                        <div class="d-flex" style="align-items: center; margin-right: 15px;">
+                                            <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
+                                                <i class="fa fa-desktop"></i>
+                                            </a>
+                                            <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">1 Loket</h6>
+                                        </div>
+                                        <div class="d-flex" style="align-items: center;">
+                                            <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
+                                                <i class="fa fa-bookmark"></i>
+                                            </a>
+                                            <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">1 Pelayanan</h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
