@@ -12,6 +12,7 @@ use App\Model\Berita;
 use App\Model\Agenda;
 use App\Model\JadwalPemilu;
 use App\Model\Calon;
+use App\Model\Instansi;
 use Carbon;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -135,5 +136,23 @@ class contentController extends Controller
         else {
             exit("Not an AJAX request -_-");
         }
+    }
+
+    // Fungsi untuk menampilkan kumpulan instansi
+    public function kumpulanberita()
+    {
+        $arr=array(
+            'data' => Berita::whereStatus(0)->orderBy('tanggal','desc')->paginate(12),
+        );
+        return view('frontend.beranda.kumpulan',$arr);
+    }
+
+    // Fungsi untuk menampilkan kumpulan instansi
+    public function kumpulaninstansi()
+    {
+        $arr=array(
+            'data' => Instansi::paginate(12),
+        );
+        return view('frontend.beranda.kumpulan',$arr);
     }
 }

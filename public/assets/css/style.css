@@ -699,3 +699,13 @@ h6,
     color: #B0B9AE;
     border-top: 1px solid rgba(255, 255, 255, .1);
 }
+
+.btn-kumpulan{
+    display: block;
+    margin-bottom: 130px;
+}
+
+.btn-kumpulan a{
+    float: right;
+    border-radius: 0 50px 50px 0;
+}

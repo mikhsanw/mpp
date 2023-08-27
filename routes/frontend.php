@@ -20,4 +20,7 @@ Route::prefix('company')->as('company')->group(function () {
     Route::get('/agenda/datainternal', 'contentController@datainternal');
     Route::get('/agenda/dataexternal', 'contentController@dataexternal');
     Route::get('/berita-detail/{id}/{seo?}', 'contentController@beritadetail');
+    Route::get('/kumpulan-berita', 'contentController@kumpulanberita');
+    Route::get('/kumpulan-instansi', 'contentController@kumpulaninstansi');
+    Route::get('/kumpulan-foto', 'contentController@kumpulanfoto');
 });

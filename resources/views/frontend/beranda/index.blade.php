@@ -232,6 +232,9 @@
                 <!-- <p class="fw-medium text-uppercase text-primary mb-2">Our News</p> -->
                 <h1 class="display-5 mb-4">Berita Seputar MPP Kab. Bengkalis</h1>
             </div>
+            <div class="btn-kumpulan">
+                <a href="{{url('/company/kumpulan-berita')}}" class="btn btn-primary py-3 px-5 wow fadeInLeft"><i class="fa fa-list"></i> Kumpulan Berita</a>
+            </div>
             <div class="row gy-5 gx-4">
                 @foreach($berita as $item)
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -270,7 +273,7 @@
 
             @foreach ($foto as $item)    
             <a class="project-item" href="{{$item->file->url_stream}}">
-                <img class="img-fluid" src="{{$item->file->url_stream}}" alt="">
+                <img class="img-fluid" src="{{$item->file->url_stream}}" alt="" style="width: 100%; height: 320px; object-fit:cover;">
                 <div class="project-title">
                     <h6 class="text-primary mb-0" style="font-size: 11pt;">{{$item->nama}}</h6>
                 </div>
@@ -289,6 +292,9 @@
                 <h1 class="display-5 mb-5">Instansi Pada MPP Kab. Bengkalis</h1>
             </div>
             <div class="row g-4">
+                <div class="btn-kumpulan">
+                    <a href="{{url('/company/kumpulan-instansi')}}" class="btn btn-primary py-3 px-5 wow fadeInLeft"><i class="fa fa-list"></i> Kumpulan Instansi</a>
+                </div>
                 @foreach ($instansi as $item)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
@@ -315,53 +321,6 @@
                     </div>
                 </div>
                 @endforeach
-
-                {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/team-2.jpg" alt="">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
-                                <i class="fa fa-2x fa-share text-white"></i>
-                            </div>
-                            <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
-                                style="height: 90px;">
-                                <h5>Adam Crew</h5>
-                                <span class="text-primary">Project Manager</span>
-                                <div class="team-social">
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{asset('assets')}}/img/team-3.jpg" alt="">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
-                                <i class="fa fa-2x fa-share text-white"></i>
-                            </div>
-                            <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
-                                style="height: 90px;">
-                                <h5>Peter Farel</h5>
-                                <span class="text-primary">Engineer</span>
-                                <div class="team-social">
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
     </div>
