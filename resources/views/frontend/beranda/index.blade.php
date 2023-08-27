@@ -289,7 +289,7 @@
                                             <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
                                                 <i class="fa fa-bookmark"></i>
                                             </a>
-                                            <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">1 Pelayanan</h6>
+                                            <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">{{App\Model\Layanan::whereInstansiId($item->id)->count()}} Pelayanan</h6>
                                         </div>
                                     </div>
                                 </div>

@@ -42,13 +42,19 @@
                                 style="height: 90px;">
                                 <h5>{{$item->nama}}</h5>
                                 <span class="text-primary">{{$item->alamat}}</span>
-                                <div class="team-social">
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                <div class="team-social d-flex">
+                                    <div class="d-flex" style="align-items: center; margin-right: 15px;">
+                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
+                                            <i class="fa fa-desktop"></i>
+                                        </a>
+                                        <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">1 Loket</h6>
+                                    </div>
+                                    <div class="d-flex" style="align-items: center;">
+                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
+                                            <i class="fa fa-bookmark"></i>
+                                        </a>
+                                        <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">{{App\Model\Layanan::whereInstansiId($item->id)->count()}} Pelayanan</h6>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +62,9 @@
                 </div>
                 @endforeach
             </div>
-            {{ $data->links() }}
+            <div class="pagination pagination-lg mt-5 mx-auto d-block">
+                {{ $data->links() }}
+            </div>
         </div>
     </div>
     <!-- Team End -->
@@ -94,7 +102,9 @@
                     @endforeach                
                 </div>
             </div>
-            {{ $data->links() }}
+            <div class="pagination pagination-lg mt-5 mx-auto d-block">
+                {{ $data->links() }}
+            </div>
         </div>
         <!-- Service End -->
     @endif
