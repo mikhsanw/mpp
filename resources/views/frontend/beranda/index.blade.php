@@ -41,25 +41,26 @@
             <div class="row g-5">
                 <div class="col-lg-6">
                     <div class="row gx-3 h-100">
-                        <div class="col-6 align-self-start wow fadeInUp" data-wow-delay="0.1s">
-                            <img class="img-fluid" src="{{asset('assets')}}/img/about-1.jpg">
+                        <div class="col-6 wow fadeInUp" data-wow-delay="0.1s">
+                            {{-- <img class="img-fluid" src="{{asset('assets')}}/img/gedung.png"> --}}
                         </div>
-                        <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
+                        {{-- <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
                             <img class="img-fluid" src="{{asset('assets')}}/img/about-2.jpg">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <p class="fw-medium text-uppercase text-primary mb-2">About Us</p>
+                    <p class="fw-medium text-uppercase text-primary mb-2">Tentang Kami</p>
                     <h1 class="display-5 mb-4">Sekilas MPP Kab. Bengkalis</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                    <p class="mb-4" style="text-align: justify">
+                        MPP dirancang oleh KEMEPAN RB sebagai bagian dari perbaikan menyeluruh dan transformasi tata kelola pelayanan publik. Menggabungkan berbagai jenis pelayanan pada satu tempat, 
+                        penyederhaan dan prosedur serta integrasi pelayanan pada Mal Pelayanan Publik akan memudahkan akses masyarakat dalam mendapat berbagai jenis pelayanan, serta meningkatkan kepercayaan masyarakat kepada penyelenggara pelayanan publik.
                     </p>
                     <div class="d-flex align-items-center mb-4">
                         <div class="flex-shrink-0 bg-primary p-4">
                             <h1 class="display-2">{{$jumlah['instansi']}}</h1>
                             <h5 class="text-white">Instansi</h5>
-                            <h5 class="text-white">Siap Melayani</h5>
+                            <h5 class="text-white">Siap Melayani Dengan</h5>
                         </div>
                         <div class="ms-4">
                             <p><i class="fa fa-check text-primary me-2"></i>Melayani setulus Hati</p>
@@ -76,7 +77,7 @@
                                     <i class="fa fa-envelope-open text-white"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <p class="mb-2">Email us</p>
+                                    <p class="mb-2">Email Kami</p>
                                     <h6 class="mb-0">{!!($kontak->filterkontak('email')->link ?? '')!!}</h6>
                                 </div>
                             </div>
@@ -87,7 +88,7 @@
                                     <i class="fa fa-phone-alt text-white"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <p class="mb-2">Call us</p>
+                                    <p class="mb-2">Hubungi Kami</p>
                                     <h6 class="mb-0">{!!($kontak->filterkontak('telp')->link ?? '')!!}</h6>
                                 </div>
                             </div>
@@ -139,60 +140,27 @@
     <!-- Features Start -->
     <div class="container-xxl py-5" id="fasilitas">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="position-relative me-lg-4">
-                        <img class="img-fluid w-100" src="{{asset('assets')}}/img/feature.jpg" alt="">
-                        <span
-                            class="position-absolute top-50 start-100 translate-middle bg-white rounded-circle d-none d-lg-block"
-                            style="width: 120px; height: 120px;"></span>
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="fw-medium text-uppercase text-primary mb-2">Our Facilities</p>
-                    <h1 class="display-5 mb-4">Fasilitas Penambah Kenyamanan Dalam Pelayanan</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
-                    </p>
+            <div class="text-center mx-auto pb-4 wow fadeInLeft" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">Fasilitas</p>
+                <h1 class="display-5 mb-4">Fasilitas MPP Kab. Bengkalis</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-12" data-wow-delay="0.5s">
                     <div class="row gy-4">
-                        <div class="col-12">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-check text-white"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h4>Experienced Workers</h4>
-                                    <span>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                                        dolore erat amet</span>
-                                </div>
+                        <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-pills me-3 col-lg-4 wow fadeInDown" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                @foreach ($fasilitas as $row => $item)
+                                    <button class="nav-link py-3 px-5 fw-medium text-uppercase {{$row == 0 ? 'active' : ''}}" id="v-pills-{{$row}}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{$row}}" type="button" role="tab" aria-controls="v-pills-{{$row}}" aria-selected="true"><i class="fa fa-gear"></i> {{$item->nama}}</button>
+                                @endforeach
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-check text-white"></i>
+                            <div class="tab-content col-lg-8 wow fadeInUp" id="v-pills-tabContent">
+                                @foreach ($fasilitas as $row => $item)
+                                <div class="tab-pane fade {{$row == 0 ? 'show active' : ''}}" id="v-pills-{{$row}}" role="tabpanel" aria-labelledby="v-pills-{{$row}}-tab">
+                                    <h6 class="fw-medium text-uppercase text-primary mb-2">{{$item->nama}}</h6>
+                                    <p style="text-align: justify">{{$item->keterangan}}</p>
+                                    <img class="img-fluid" style="height: 497px; width: 100%;" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
                                 </div>
-                                <div class="ms-4">
-                                    <h4>Reliable Industrial Services</h4>
-                                    <span>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                                        dolore erat amet</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-check text-white"></i>
-                                </div>
-                                <div class="ms-4">
-                                    <h4>24/7 Customer Support</h4>
-                                    <span>Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna
-                                        dolore erat amet</span>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -229,7 +197,7 @@
     <div class="container-xxl py-5" id="berita">
         <div class="container">
             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <!-- <p class="fw-medium text-uppercase text-primary mb-2">Our News</p> -->
+                <p class="fw-medium text-uppercase text-primary mb-2">Berita</p>
                 <h1 class="display-5 mb-4">Berita Seputar MPP Kab. Bengkalis</h1>
             </div>
             <div class="btn-kumpulan">
@@ -266,7 +234,7 @@
     <!-- Project Start -->
     <div class="container-fluid bg-dark pt-5 my-5 px-0" id="galeri">
         <div class="text-center mx-auto mt-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
-            <p class="fw-medium text-uppercase text-primary mb-2">Our Galery</p>
+            <p class="fw-medium text-uppercase text-primary mb-2">Galeri</p>
             <h1 class="display-5 text-white mb-5">Galeri MPP Kab. Bengkalis</h1>
         </div>
         <div class="owl-carousel project-carousel wow fadeIn" data-wow-delay="0.1s" id="lightgallery">
@@ -295,32 +263,35 @@
                 <div class="btn-kumpulan">
                     <a href="{{url('/company/kumpulan-instansi')}}" class="btn btn-primary py-3 px-5 wow fadeInLeft"><i class="fa fa-list"></i> Kumpulan Instansi</a>
                 </div>
-                @foreach ($instansi as $item)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <img class="img-fluid" src="{{asset($item->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
-                        <div class="d-flex">
-                            <a href="{{url('', $item->id)}}">
-                                <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
-                                <i class="fa fa-2x fa-share text-white"></i>
-                            </div></a>
-                            <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
-                                style="height: 90px;">
-                                <h5>{{$item->nama}}</h5>
-                                <span class="text-primary">{{$item->alamat}}</span>
-                                <div class="team-social">
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
+
+                <div class="row" style="margin-top: -70px;">
+                    @foreach ($instansi  as $row => $item)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item">
+                            <img class="img-fluid" src="{{asset($item->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
+                            <div class="d-flex">
+                                <a href="{{url('', $item->id)}}">
+                                    <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
+                                    <i class="fa fa-2x fa-share text-white"></i>
+                                </div></a>
+                                <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
+                                    style="height: 90px;">
+                                    <h6>{{$item->nama}}</h6>
+                                    <span class="text-primary">{{$item->alamat}}</span>
+                                    <div class="team-social">
+                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i
+                                                class="fab fa-instagram"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
         </div>
     </div>
@@ -328,7 +299,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
+    {{-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Testimonial</p>
@@ -382,7 +353,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Testimonial End -->
 
     <!-- Contact Start -->
@@ -400,7 +371,7 @@
                         </div>
                         <h4 class="mb-3">Nomor Telepon</h4>
                         <p class="mb-2">{!!($kontak->filterkontak('telp')->link ?? '')!!}</p>
-                        <a class="btn btn-primary px-4" href="tel:+0123456789">Call Now <i
+                        <a class="btn btn-primary px-4" href="tel:{!!($kontak->filterkontak('telp')->link ?? '')!!}">Call Now <i
                                 class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -412,7 +383,7 @@
                         <h4 class="mb-3">Alamat Email</h4>
                         <p class="mb-2">{!!($kontak->filterkontak('email')->link ?? '')!!}</p>
                         <!-- <p class="mb-4">support@example.com</p> -->
-                        <a class="btn btn-primary px-4" href="mailto:info@example.com">Email Now <i
+                        <a class="btn btn-primary px-4" href="mailto:{!!($kontak->filterkontak('email')->link ?? '')!!}">Email Now <i
                                 class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -506,4 +477,11 @@
         </div>
     </div>
     <!-- Contact End -->
+
+    <script>
+        $('#myCollapsible').collapse({
+        toggle: false
+        })
+
+    </script>
 @endsection

@@ -7,6 +7,7 @@ use App\Model\Berita;
 use App\Model\Halaman;
 use App\Model\Layanan;
 use App\Model\Instansi;
+use App\Model\Fasilitas;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -29,6 +30,7 @@ class frontendController extends Controller
             'tentang' => Halaman::where('jenis',0)->whereNull('parent_id')->first(),
             'instansi' => Instansi::orderBy('id','desc')->take(3)->get(),
             'foto' => Foto::where('status',0)->orderBy('id','desc')->get(),
+            'fasilitas' => Fasilitas::get(),
 
         );
         return view('frontend.beranda.index',$data);
