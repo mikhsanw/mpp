@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FF5E14;
+    --primary: #FE0000;
     --secondary: #5F656F;
     --light: #F5F5F5;
     --dark: #02245B;
@@ -229,7 +229,7 @@ h6,
 }
 
 .page-header {
-    background: linear-gradient(to right, rgba(2, 36, 91, 1) 0%, rgba(2, 36, 91, 0) 100%), url(../img/carousel-2.jpg) center center no-repeat;
+    background: linear-gradient(to right, rgba(2, 36, 91, 1) 0%, rgba(2, 36, 91, 0) 100%), url(../img/carousel-2-.png) center center no-repeat;
     background-size: cover;
 }
 
@@ -708,4 +708,40 @@ h6,
 .btn-kumpulan a{
     float: right;
     border-radius: 0 50px 50px 0;
+}
+
+.img-fasilitas{
+    height: 497px; 
+    width: 100%;
+}
+
+@media (min-width: 412px) {
+    .img-fasilitas{
+        height: auto; 
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 512px) {
+    .carousel-inner{
+        height: 200px; 
+        width: 100%;
+        margin-bottom: -100px;
+    }
+
+    .carousel-inner img{
+        height: 180px !important; 
+        width: 100% !important;
+        object-fit: cover;
+    }
+    
+}
+
+.bg-red{
+    background-color: #c60000;
+}
+
+.bg-white{
+    background-color: #ffffffeb;
 }

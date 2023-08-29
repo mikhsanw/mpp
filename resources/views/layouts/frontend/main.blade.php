@@ -105,9 +105,9 @@
 
 
     <!-- Copyright Start -->
-    <div class="container-fluid copyright bg-dark py-4">
+    <div class="container-fluid bg-white copyright py-4">
         <div class="container text-center">
-            <p class="mb-2">Development By &copy; <a class="fw-semi-bold" href="#">Tim PBE Diskominfotik Kabupaten Bengkalis 2023</a>, All Right Reserved.
+            <p style="color: #000000 !important;" class="mb-2">Development By &copy; <a class="fw-semi-bold" href="#">Tim PBE Diskominfotik Kabupaten Bengkalis 2023</a>, All Right Reserved.
             </p>
         </div>
     </div>

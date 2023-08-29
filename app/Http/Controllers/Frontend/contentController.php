@@ -155,4 +155,14 @@ class contentController extends Controller
         );
         return view('frontend.beranda.kumpulan',$arr);
     }
+
+    // Menampilkan detail Instansi
+    public function instansidetail($id){
+        $instansi=Instansi::find($id);
+        $arr=array(
+            'data' => $instansi,
+        );
+
+        return view('frontend.beranda.instansidetail',$arr);
+    }
 }

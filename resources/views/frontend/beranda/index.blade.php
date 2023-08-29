@@ -43,24 +43,26 @@
                     <div class="row gx-3 h-100">
                         <div class="col-6 wow fadeInUp" data-wow-delay="0.1s">
                             {{-- <img class="img-fluid" src="{{asset('assets')}}/img/gedung.png"> --}}
+                            <img class="img-fluid" src="{{asset('assets')}}/img/about-1.png">
                         </div>
-                        {{-- <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
-                            <img class="img-fluid" src="{{asset('assets')}}/img/about-2.jpg">
-                        </div> --}}
+                        <div class="col-6 align-self-end wow fadeInDown" data-wow-delay="0.1s">
+                            <img class="img-fluid" src="{{asset('assets')}}/img/about-2.png">
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <p class="fw-medium text-uppercase text-primary mb-2">Tentang Kami</p>
-                    <h1 class="display-5 mb-4">Sekilas MPP Kab. Bengkalis</h1>
+                    <h1 class="display-5 mb-4 text-primary">Sekilas MPP Kab. Bengkalis</h1>
                     <p class="mb-4" style="text-align: justify">
                         MPP dirancang oleh KEMEPAN RB sebagai bagian dari perbaikan menyeluruh dan transformasi tata kelola pelayanan publik. Menggabungkan berbagai jenis pelayanan pada satu tempat, 
                         penyederhaan dan prosedur serta integrasi pelayanan pada Mal Pelayanan Publik akan memudahkan akses masyarakat dalam mendapat berbagai jenis pelayanan, serta meningkatkan kepercayaan masyarakat kepada penyelenggara pelayanan publik.
                     </p>
                     <div class="d-flex align-items-center mb-4">
                         <div class="flex-shrink-0 bg-primary p-4">
-                            <h1 class="display-2">{{$jumlah['instansi']}}</h1>
+                            <h1 class="display-2 text-white">{{$jumlah['instansi']}}</h1>
                             <h5 class="text-white">Instansi</h5>
-                            <h5 class="text-white">Siap Melayani Dengan</h5>
+                            <h5 class="text-white">Siap Melayani</h5>
+                            <h5 class="text-white">Dengan Ramah</h5>
                         </div>
                         <div class="ms-4">
                             <p><i class="fa fa-check text-primary me-2"></i>Melayani setulus Hati</p>
@@ -102,33 +104,33 @@
 
 
     <!-- Facts Start -->
-    <div class="container-fluid facts my-5 p-5">
+    <div class="container-fluid bg-red facts my-5 p-5">
         <div class="row g-5">
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
                 <div class="text-center border p-5">
                     <i class="fa fa-certificate fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">{{$jumlah['instansi']}}</h1>
+                    <h1 class="display-2 text-white mb-0" data-toggle="counter-up">{{$jumlah['instansi']}}</h1>
                     <span class="fs-5 fw-semi-bold text-white">Jumlah Instansi</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.3s">
                 <div class="text-center border p-5">
                     <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">{{$jumlah['layanan']}}</h1>
+                    <h1 class="display-2 text-white mb-0" data-toggle="counter-up">{{$jumlah['layanan']}}</h1>
                     <span class="fs-5 fw-semi-bold text-white">Jumlah Pelayanan</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.5s">
                 <div class="text-center border p-5">
                     <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">0</h1>
+                    <h1 class="display-2 text-white mb-0" data-toggle="counter-up">0</h1>
                     <span class="fs-5 fw-semi-bold text-white">Jumlah Loket</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.7s">
                 <div class="text-center border p-5">
                     <i class="fa fa-check-double fa-3x text-white mb-3"></i>
-                    <h1 class="display-2 text-primary mb-0" data-toggle="counter-up">0</h1>
+                    <h1 class="display-2 text-white mb-0" data-toggle="counter-up">0</h1>
                     <span class="fs-5 fw-semi-bold text-white">Jumlah Antrian Hari Ini</span>
                 </div>
             </div>
@@ -140,9 +142,9 @@
     <!-- Features Start -->
     <div class="container-xxl py-5" id="fasilitas">
         <div class="container">
-            <div class="text-center mx-auto pb-4 wow fadeInLeft" data-wow-delay="0.1s" style="max-width: 600px;">
+            <div class="text-left pb-4 wow fadeInLeft" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Fasilitas</p>
-                <h1 class="display-5 mb-4">Fasilitas MPP Kab. Bengkalis</h1>
+                <h1 class="display-5 text-primary mb-4">Fasilitas MPP Kab. Bengkalis</h1>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-12" data-wow-delay="0.5s">
@@ -158,7 +160,7 @@
                                 <div class="tab-pane fade {{$row == 0 ? 'show active' : ''}}" id="v-pills-{{$row}}" role="tabpanel" aria-labelledby="v-pills-{{$row}}-tab">
                                     <h6 class="fw-medium text-uppercase text-primary mb-2">{{$item->nama}}</h6>
                                     <p style="text-align: justify">{{$item->keterangan}}</p>
-                                    <img class="img-fluid" style="height: 497px; width: 100%;" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
+                                    <img class="img-fluid img-fasilitas" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
                                 </div>
                                 @endforeach
                             </div>
@@ -198,7 +200,7 @@
         <div class="container">
             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Berita</p>
-                <h1 class="display-5 mb-4">Berita Seputar MPP Kab. Bengkalis</h1>
+                <h1 class="display-5 mb-4 text-primary">Berita Seputar MPP Kab. Bengkalis</h1>
             </div>
             <div class="btn-kumpulan">
                 <a href="{{url('/company/kumpulan-berita')}}" class="btn btn-primary py-3 px-5 wow fadeInLeft"><i class="fa fa-list"></i> Kumpulan Berita</a>
@@ -232,9 +234,9 @@
 
 
     <!-- Project Start -->
-    <div class="container-fluid bg-dark pt-5 my-5 px-0" id="galeri">
+    <div class="container-fluid bg-red pt-5 my-5 px-0" id="galeri">
         <div class="text-center mx-auto mt-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
-            <p class="fw-medium text-uppercase text-primary mb-2">Galeri</p>
+            <p class="fw-medium text-uppercase text-white mb-2">Galeri</p>
             <h1 class="display-5 text-white mb-5">Galeri MPP Kab. Bengkalis</h1>
         </div>
         <div class="owl-carousel project-carousel wow fadeIn" data-wow-delay="0.1s" id="lightgallery">
@@ -257,7 +259,7 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Instansi</p>
-                <h1 class="display-5 mb-5">Instansi Pada MPP Kab. Bengkalis</h1>
+                <h1 class="display-5 text-primary mb-5">Instansi Pada MPP <br>Kab. Bengkalis</h1>
             </div>
             <div class="row g-4">
                 <div class="btn-kumpulan">
@@ -270,7 +272,7 @@
                         <div class="team-item">
                             <img class="img-fluid" src="{{asset($item->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
                             <div class="d-flex">
-                                <a href="{{url('company/detail-instansi', $item->id)}}">
+                                <a href="{{url('company/instansi-detail', $item->id)}}">
                                     <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
                                     <i class="fa fa-2x fa-share text-white"></i>
                                 </div></a>

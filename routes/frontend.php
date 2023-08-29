@@ -23,4 +23,6 @@ Route::prefix('company')->as('company')->group(function () {
     Route::get('/kumpulan-berita', 'contentController@kumpulanberita');
     Route::get('/kumpulan-instansi', 'contentController@kumpulaninstansi');
     Route::get('/kumpulan-foto', 'contentController@kumpulanfoto');
+    Route::get('/instansi-detail/{id}/{seo?}', 'contentController@instansidetail');
+
 });
