@@ -34,7 +34,7 @@
                     <div class="team-item">
                         <img class="img-fluid" src="{{asset($item->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
                         <div class="d-flex">
-                            <a href="{{url('', $item->id)}}">
+                            <a href="{{url('company/instansi-detail', $item->id)}}">
                                 <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
                                 <i class="fa fa-2x fa-share text-white"></i>
                             </div></a>
