@@ -7,7 +7,7 @@
             <div class="carousel-inner">
                 @foreach($slider as $row => $item)
                 <div class="carousel-item {{$row==0?'active':''}}">
-                    <img class="w-100" src="{{asset($item->file->url_stream)}}" alt="Image">
+                    <img class="w-100 img-fluid" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
                     {{-- <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -160,7 +160,7 @@
                                 <div class="tab-pane fade {{$row == 0 ? 'show active' : ''}}" id="v-pills-{{$row}}" role="tabpanel" aria-labelledby="v-pills-{{$row}}-tab">
                                     <h6 class="fw-medium text-uppercase text-primary mb-2">{{$item->nama}}</h6>
                                     <p style="text-align: justify">{{$item->keterangan}}</p>
-                                    <img class="img-fluid img-fasilitas" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
+                                    <img class="w-50 img-fluid img-fasilitas" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
                                 </div>
                                 @endforeach
                             </div>
