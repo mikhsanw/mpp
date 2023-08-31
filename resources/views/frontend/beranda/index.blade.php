@@ -76,21 +76,21 @@
                         <div class="col-sm-12 d-flex align-items-center">
                             <div class="">
                                 <div class="ms-3">
-                                    <button type="button" class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#maklumatpelayanan">
+                                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#maklumatpelayanan">
                                         <i class="fas fa-award text-white"></i> Maklumat Pelayanan
                                     </button>
                                 </div>
                             </div>
                             <div class="">
                                 <div class="ms-3">
-                                    <button type="button" class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#sop">
+                                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#sop">
                                         <i class="fas fa-exchange-alt text-white"></i> Standart Oprasional Prosedur
                                     </button>
                                 </div>
                             </div>
                             <div class="">
                                 <div class="ms-3">
-                                    <button type="button" class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#probis">
+                                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#probis">
                                         <i class="far fa-check-circle text-white"></i> Proses Bisnis
                                     </button>
                                 </div>
