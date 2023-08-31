@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <p class="fw-medium text-uppercase text-primary mb-2">Tentang Kami</p>
-                    <h1 class="display-5 mb-4 text-primary">Sekilas MPP Kab. Bengkalis</h1>
+                    <h1 class="display-5 mb-4 text-primary">Sekilas MPP Kabupaten Bengkalis</h1>
                     <p class="mb-4" style="text-align: justify">
                         MPP dirancang oleh KEMEPAN RB sebagai bagian dari perbaikan menyeluruh dan transformasi tata kelola pelayanan publik. Menggabungkan berbagai jenis pelayanan pada satu tempat, 
                         penyederhaan dan prosedur serta integrasi pelayanan pada Mal Pelayanan Publik akan memudahkan akses masyarakat dalam mendapat berbagai jenis pelayanan, serta meningkatkan kepercayaan masyarakat kepada penyelenggara pelayanan publik.
@@ -144,7 +144,7 @@
         <div class="container">
             <div class="text-left pb-4 wow fadeInLeft" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Fasilitas</p>
-                <h1 class="display-5 text-primary mb-4">Fasilitas MPP Kab. Bengkalis</h1>
+                <h1 class="display-5 text-primary mb-4">Fasilitas MPP Kabupaten Bengkalis</h1>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-12" data-wow-delay="0.5s">
@@ -200,7 +200,7 @@
         <div class="container">
             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Berita</p>
-                <h1 class="display-5 mb-4 text-primary">Berita Seputar MPP Kab. Bengkalis</h1>
+                <h1 class="display-5 mb-4 text-primary">Berita Seputar MPP Kabupaten Bengkalis</h1>
             </div>
             <div class="btn-kumpulan">
                 <a href="{{url('/company/kumpulan-berita')}}" class="btn btn-primary py-3 px-5 wow fadeInLeft"><i class="fa fa-list"></i> Kumpulan Berita</a>
@@ -237,7 +237,7 @@
     <div class="container-fluid bg-red pt-5 my-5 px-0" id="galeri">
         <div class="text-center mx-auto mt-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
             <p class="fw-medium text-uppercase text-white mb-2">Galeri</p>
-            <h1 class="display-5 text-white mb-5">Galeri MPP Kab. Bengkalis</h1>
+            <h1 class="display-5 text-white mb-5">Galeri MPP Kabupaten Bengkalis</h1>
         </div>
         <div class="owl-carousel project-carousel wow fadeIn" data-wow-delay="0.1s" id="lightgallery">
 
@@ -259,7 +259,7 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Instansi</p>
-                <h1 class="display-5 text-primary mb-5">Instansi Pada MPP <br>Kab. Bengkalis</h1>
+                <h1 class="display-5 text-primary mb-5">Instansi Pada MPP <br>Kabupaten Bengkalis</h1>
             </div>
             <div class="row g-4">
                 <div class="btn-kumpulan">

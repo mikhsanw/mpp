@@ -136,7 +136,7 @@ class InstansisController extends Controller
                 'persyaratan' => 'required|'.config('master.regex.json'),
                 'waktudanbiaya' => 'required|'.config('master.regex.json'),
                 'alur' => 'required|'.config('master.regex.json'),
-                // 'logo_instansi'        => 'required|mimes:jpg,jpeg,png'
+                'logo_instansi'        => $request->hasFile('logo_instansi') ? 'required|mimes:jpg,png,jpeg' : ''
             ]);
             if ($validator->fails()) {
                 $response=['status'=>FALSE, 'pesan'=>$validator->messages()];
