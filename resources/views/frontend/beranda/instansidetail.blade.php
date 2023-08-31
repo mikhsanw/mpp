@@ -23,38 +23,79 @@
 
 <div class="container-fluid py-5 my-5 px-0">
     <div class="mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 80%; visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
-        <div class="text-center">
-            {{-- <p class="fw-medium text-uppercase text-primary mb-5">Instansi</p> --}}
-            {{-- <h1 class="display-5 mb-5">{{$data->nama}}</h1> --}}
-        </div>
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="team-item">
-                <img class="img-fluid" src="{{asset($data->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
-                <div class="d-flex">
-                    <a href="{{url('company/instansi-detail', $data->id)}}">
-                        <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
-                        <i class="fa fa-2x fa-share text-white"></i>
-                    </div></a>
-                    <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
-                        style="height: 90px;">
-                        <h6>{{$data->nama}}</h6>
-                        <span class="text-primary">{{$data->alamat}}</span>
-                        <div class="team-social d-flex">
-                            <div class="d-flex" style="align-items: center; margin-right: 15px;">
-                                <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
-                                    <i class="fa fa-desktop"></i>
-                                </a>
-                                <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">1 Loket</h6>
-                            </div>
-                            <div class="d-flex" style="align-items: center;">
-                                <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
-                                    <i class="fa fa-bookmark"></i>
-                                </a>
-                                <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">{{App\Model\Layanan::whereInstansiId($data->id)->count()}} Pelayanan</h6>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <img class="img-fluid" src="{{asset($data->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
+                    <div class="d-flex">
+                        <a href="{{url('company/instansi-detail', $data->id)}}">
+                            <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
+                            <i class="fa fa-2x fa-share text-white"></i>
+                        </div></a>
+                        <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
+                            style="height: 90px;">
+                            <h6>{{$data->nama}}</h6>
+                            <span class="text-primary">{{$data->alamat}}</span>
+                            <div class="team-social d-flex">
+                                <div class="d-flex" style="align-items: center; margin-right: 15px;">
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
+                                        <i class="fa fa-desktop"></i>
+                                    </a>
+                                    <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">1 Loket</h6>
+                                </div>
+                                <div class="d-flex" style="align-items: center;">
+                                    <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
+                                        <i class="fa fa-bookmark"></i>
+                                    </a>
+                                    <h6 class="text-white" style="font-size: 11pt; margin-top:8px; margin-left: 5px;">{{App\Model\Layanan::whereInstansiId($data->id)->count()}} Pelayanan</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-8 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div>
+                    <h6>Alamat</h6>
+                    <div class="d-flex justify-content-between">
+                        <p>{{$data->alamat}}</p>
+                        <i class="fa fa-map-marker-alt"></i>
+                    </div>
+                    <hr>
+                </div>
+                <div>
+                    <h6>Telepon</h6>
+                    <div class="d-flex justify-content-between">
+                        <p>{{$data->telepon}}</p>
+                        <i class="fa fa-phone-alt"></i>
+                    </div>
+                    <hr>
+                </div>
+                <div>
+                    <h6>Tracking</h6>
+                    <div class="d-flex justify-content-between">
+                        <p>{{$data->tracking}}</p>
+                        <i class="fa fa-map-marker-alt"></i>
+                    </div>
+                    <hr>
+                </div>
+                <div>
+                    <h6>Email</h6>
+                    <div class="d-flex justify-content-between">
+                        <p>{{$data->email}}</p>
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <hr>
+                </div>
+                <div>
+                    <h6>Website</h6>
+                    <div class="d-flex justify-content-between">
+                        <p>{{$data->website}}</p>
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <hr>
+                </div>
+            
             </div>
         </div>
         <div class="mb-5"></div>
@@ -79,7 +120,7 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <p class="mt-2">Jenis Layanan:</p>
                 <ol>
-                    @foreach (App\Model\Layanan::whereInstansiId($data->id)->get() as $item)
+                    @foreach ($data->layanans as $item)
                         <li>{{$item->nama}}</li>
                     @endforeach
                 </ol>
