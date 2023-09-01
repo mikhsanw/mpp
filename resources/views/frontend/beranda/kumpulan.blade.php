@@ -27,20 +27,12 @@
             <div class="text-center mx-auto wow fadeInUp mb-5" data-wow-delay="0.1s" style="max-width: 700px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Unit Layanan</p>
                 <h1 class="display-5">Unit Layanan <br> MPP Kabupaten Bengkalis</h1>
-                
-                <form id="filters" action="{{route('filters')}}" method="GET" >
-                @csrf
-                <select name="categoryId" id="categoryId"   onchange="document.querySelector('#filters').submit();">
-                    <option value="" > - </option>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                    @endforeach
-                </select>
-                </form>
-
             </div>
-            <div class="row g-4">
-                @foreach ($data as $item)
+            <div class="form-group mt-5 mb-5">
+                <input type="text" name="search" id="search" class="form-control" placeholder="Cari berdasarkan nama unit layanan" />
+            </div>
+            <div class="row g-4" id="data-instansi">
+                {{-- @foreach ($data as $item)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <img class="img-fluid" src="{{asset($item->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
@@ -71,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @endforeach --}}
             </div>
             <div class="pagination pagination-lg mt-5 mx-auto d-block">
                 {{ $data->links() }}
@@ -120,3 +112,33 @@
         <!-- Service End -->
     @endif
 @endsection
+
+@push('js')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>    
+    <script>
+        $(document).ready(function(){
+        
+            fetch_customer_data();
+            
+            function fetch_customer_data(query = '')
+            {
+                $.ajax({
+                    url:"{{ route('live_search') }}",
+                    method:'GET',
+                    data:{query:query},
+                    dataType:'json',
+                    success:function(data)
+                    {
+                        $('#data-instansi').html(data.table_data);
+                        // $('#total_records').text(data.total_data);
+                    }
+                })
+            }
+            
+            $(document).on('keyup', '#search', function(){
+                var query = $(this).val();
+                fetch_customer_data(query);
+            });
+        });
+    </script>
+@endpush

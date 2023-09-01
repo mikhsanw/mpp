@@ -24,5 +24,6 @@ Route::prefix('company')->as('company')->group(function () {
     Route::get('/kumpulan-instansi', 'contentController@kumpulaninstansi');
     Route::get('/kumpulan-foto', 'contentController@kumpulanfoto');
     Route::get('/instansi-detail/{id}/{seo?}', 'contentController@instansidetail');
-
+    
 });
+Route::get('/live_search/action', 'contentController@action')->name('live_search');
