@@ -5,9 +5,6 @@
 		<p>
 			<label class="control-label">Hapus data <strong>{{ $data->nama }}</strong>?</label>
 		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->keterangan }}</strong>?</label>
-		</p>
 
 
 	</div>

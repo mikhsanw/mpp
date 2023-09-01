@@ -5,14 +5,6 @@
 		<p>
 			<label class="control-label">Hapus data <strong>{{ $data->nama }}</strong>?</label>
 		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->keterangan }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->instansi_id }}</strong>?</label>
-		</p>
-
-
 	</div>
 	{!! Form::hidden('table-list', 'datatable', array('id' => 'table-list')) !!}
 </div>

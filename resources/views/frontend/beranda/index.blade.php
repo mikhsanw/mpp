@@ -111,7 +111,7 @@
                 <div class="text-center border p-5">
                     <i class="fa fa-certificate fa-3x text-white mb-3"></i>
                     <h1 class="display-2 text-white mb-0" data-toggle="counter-up">{{$jumlah['instansi']}}</h1>
-                    <span class="fs-5 fw-semi-bold text-white">Jumlah Instansi</span>
+                    <span class="fs-5 fw-semi-bold text-white">Jumlah Unit Layanan</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.3s">
@@ -259,8 +259,8 @@
     <div class="container-xxl py-5" id="instansi">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="fw-medium text-uppercase text-primary mb-2">Instansi</p>
-                <h1 class="display-5 text-primary mb-5">Instansi Pada MPP <br> Kabupaten Bengkalis</h1>
+                <p class="fw-medium text-uppercase text-primary mb-2">Unit Layanan</p>
+                <h1 class="display-5 text-primary mb-5">Unit Layanan MPP <br> Kabupaten Bengkalis</h1>
             </div>
             <div class="row g-4">
                 <div class="btn-kumpulan">

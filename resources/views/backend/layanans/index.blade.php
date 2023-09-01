@@ -15,8 +15,6 @@
 					<th width="10px">No</th>
 					<th class="text-center">nama</th>
 					<th class="text-center">keterangan</th>
-					<th class="text-center">instansi_id</th>
-
 					<th width="50px" class="text-center" tabindex="0" rowspan="1" colspan="1">Aksi</th>
 				</tr>
 			</thead>

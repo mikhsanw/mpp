@@ -8,12 +8,12 @@
                 $segments = ucfirst(str_replace('-', ' ', Request::segment(2)));
                 $securl = explode('-', Request::segment(2));
             @endphp
-            <h1 class="display-3 text-white animated slideInRight">{{$segments}}</h1>
+            <h1 class="display-3 text-white animated slideInRight">{{ucwords($segments)}}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb animated slideInRight mb-0">
                     <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{url('').'#'.$securl[1]}}">{{ucfirst($securl[1])}}</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{$segments}}</li>
+                    <li class="breadcrumb-item"><a href="{{url('').'#'.$securl[1]}}">{{ucwords($securl[1])}}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ucwords($segments)}}</li>
                 </ol>
             </nav>
         </div>
@@ -24,9 +24,20 @@
     <!-- Team Start -->
     <div class="container-xxl py-5" id="instansi">
         <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="fw-medium text-uppercase text-primary mb-2">Instansi</p>
-                <h1 class="display-5 mb-5">Instansi Pada MPP Kab. Bengkalis</h1>
+            <div class="text-center mx-auto wow fadeInUp mb-5" data-wow-delay="0.1s" style="max-width: 700px;">
+                <p class="fw-medium text-uppercase text-primary mb-2">Unit Layanan</p>
+                <h1 class="display-5">Unit Layanan <br> MPP Kabupaten Bengkalis</h1>
+                
+                <form id="filters" action="{{route('filters')}}" method="GET" >
+                @csrf
+                <select name="categoryId" id="categoryId"   onchange="document.querySelector('#filters').submit();">
+                    <option value="" > - </option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+                </form>
+
             </div>
             <div class="row g-4">
                 @foreach ($data as $item)
