@@ -55,6 +55,7 @@ class FasilitasController extends Controller
             $validator=Validator::make($request->all(), [
 					'nama' => 'required|'.config('master.regex.json'),
 					'keterangan' => 'required|'.config('master.regex.json'),
+                    'foto_fasilitas'        => 'required|mimes:jpg,png,jpeg,webp'
                 ]);
             if ($validator->fails()) {
                 $respon=['status'=>false, 'pesan'=>$validator->messages()];

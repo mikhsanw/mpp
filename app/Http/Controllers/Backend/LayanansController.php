@@ -133,7 +133,8 @@ class LayanansController extends Controller
                 $data = $this->model::find($id);
                 $data->update($request->all());
                 if ($request->hasFile('foto_layanan')) {
-                    $data->file()->update([
+                    $data->file()->updateOrCreate(['name'=>'foto_layanan'],[
+                        'name'                  => 'foto_layanan',
                         'data'      =>  [
                             'disk'      => config('filesystems.default'),
                             'target'    => Storage::putFile($this->kode.'/foto_layanan/'.date('Y').'/'.date('m').'/'.date('d'),$request->file('foto_layanan')),
