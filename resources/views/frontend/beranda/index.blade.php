@@ -397,7 +397,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-light text-center h-100 p-5">
+                    <div class="bg-light text-center h-100 p-5 alamat">
                         <div class="btn-square bg-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
                             <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
                         </div>
@@ -494,3 +494,9 @@
 
     </script>
 @endsection
+@push('css')
+<style>
+    .alamat font {
+        color : #5F656F;
+    }
+</style>
