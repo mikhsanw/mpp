@@ -24,7 +24,7 @@
 <div class="container-fluid py-5 my-5 px-0">
     <div class="mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 80%; visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
         <div class="row">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="pointer-events: none;">
                 <div class="team-item">
                     <img class="img-fluid" src="{{asset($data->file->url_stream)}}" alt="" style="width: 315px; height: 355px; object-fit:contain; display: block; margin-left: auto; margin-right: auto;">
                     <div class="d-flex">
@@ -35,7 +35,6 @@
                         <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
                             style="height: 90px;">
                             <h6>{{$data->nama}}</h6>
-                            <span class="text-primary">{{$data->alamat}}</span>
                             <div class="team-social d-flex">
                                 <div class="d-flex" style="align-items: center; margin-right: 15px;">
                                     <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
