@@ -32,10 +32,7 @@
                 <input type="text" name="search" id="search" class="form-control" placeholder="Cari berdasarkan nama unit layanan" />
             </div>
             <div class="row g-4" id="data-instansi">
-                
-            </div>
-            <div class="pagination pagination-lg mt-5 mx-auto d-block">
-                {{ $data->links() }}
+                {{-- Tempat data instansi --}}
             </div>
         </div>
     </div>
