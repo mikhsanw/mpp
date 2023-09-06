@@ -199,8 +199,7 @@ class contentController extends Controller
                             </div></a>
                             <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
                                 style="height: 90px;">
-                                <h5>'.$row->nama.'</h5>
-                                <span class="text-primary">'.$row->alamat.'</span>
+                                <h6>'.$row->nama.'</h6>
                                 <div class="team-social d-flex">
                                     <div class="d-flex" style="align-items: center; margin-right: 15px;">
                                         <a class="btn btn-square btn-dark rounded-circle mx-1" href="">

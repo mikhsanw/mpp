@@ -280,7 +280,6 @@
                                 <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
                                     style="height: 90px;">
                                     <h6>{{$item->nama}}</h6>
-                                    <span class="text-primary">{{$item->alamat}}</span>
                                     <div class="team-social d-flex">
                                         <div class="d-flex" style="align-items: center; margin-right: 15px;">
                                             <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
