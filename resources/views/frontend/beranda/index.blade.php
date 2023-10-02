@@ -415,13 +415,11 @@
                         tabindex="0"></iframe>
                 </div>
             </div>
-            {{-- <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="fw-medium text-uppercase text-primary mb-2">Contact Us</p>
-                    <h1 class="display-5 mb-4">If You Have Any Queries, Please Feel Free To Contact Us</h1>
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form
-                        with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're
-                        done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+            <div class="row g-5" id="Pengaduan">
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="fw-medium text-uppercase text-primary mb-2">Layanan Pengaduan</p>
+                    <h1 class="display-5 mb-4">Layanan Pengaduan Online</h1>
+                    <p class="mb-4">Hubungi kami jika kendala atau permasalah terkait pelayanan yang terdapat di Mal Pelayanan Publik Kabupaten Bengkalis.</p>
                     <div class="row g-4">
                         <div class="col-6">
                             <div class="d-flex">
@@ -429,8 +427,8 @@
                                     <i class="fa fa-phone-alt text-white"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h6>Call Us</h6>
-                                    <span>+012 345 67890</span>
+                                    <h6>Telephone</h6>
+                                    <span>{!!($kontak->filterkontak('telp')->link ?? '')!!}</span>
                                 </div>
                             </div>
                         </div>
@@ -440,26 +438,26 @@
                                     <i class="fa fa-envelope text-white"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h6>Mail Us</h6>
-                                    <span>info@example.com</span>
+                                    <h6>Email</h6>
+                                    <span>{!!($kontak->filterkontak('email')->link ?? '')!!}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <!-- <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Nama">
+                                    <label for="name">Nama</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <label for="email">Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -480,8 +478,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div> --}}
+                </div> -->
+            </div>
         </div>
     </div>
     <!-- Contact End -->
