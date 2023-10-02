@@ -59,7 +59,6 @@ class InstansisController extends Controller
 					'tracking' => 'required|'.config('master.regex.text'),
 					'email' => 'required',
 					'website' => 'required|'.config('master.regex.text'),
-					'layanan' => 'required|'.config('master.regex.json'),
 					'dasarhukum' => 'required|'.config('master.regex.json'),
 					'persyaratan' => 'required|'.config('master.regex.json'),
 					'waktudanbiaya' => 'required|'.config('master.regex.json'),
@@ -131,12 +130,11 @@ class InstansisController extends Controller
                 'tracking' => 'required|'.config('master.regex.text'),
                 'email' => 'required',
                 'website' => 'required|'.config('master.regex.text'),
-                'layanan' => 'required|'.config('master.regex.json'),
                 'dasarhukum' => 'required|'.config('master.regex.json'),
                 'persyaratan' => 'required|'.config('master.regex.json'),
                 'waktudanbiaya' => 'required|'.config('master.regex.json'),
                 'alur' => 'required|'.config('master.regex.json'),
-                // 'logo_instansi'        => 'required|mimes:jpg,jpeg,png'
+                'logo_instansi'        => $request->hasFile('logo_instansi') ? 'required|mimes:jpg,png,jpeg' : ''
             ]);
             if ($validator->fails()) {
                 $response=['status'=>FALSE, 'pesan'=>$validator->messages()];

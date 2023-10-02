@@ -1,8 +1,8 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
-    <a href="{{url('/')}}" class="navbar-brand ps-5 me-0">
-        <h1 class="text-white m-0">{{$aplikasi->singkatan}}</h1>
-        
+    <a href="{{url('/')}}" class="navbar-brand ps-5 me-0 d-flex justify-content align-items-end">
+        <h1 class="text-white ">{{$aplikasi->singkatan}} </h1> 
+        <h5 class="text-white p-2">{{$aplikasi->daerah}} </h5>
     </a>
     <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -36,8 +36,10 @@
                 </div>
             </div> 
             <a href="#contact" class="nav-item nav-link">Contact</a> -->
+            <!-- <a href="#maklumatpelayanan" data-bs-toggle="modal" data-bs-target="#maklumatpelayanan" class="nav-item nav-link">Maklumat Pelayanan</a> -->
         </div>
-        <a href="" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a>
+        {{-- <a href="" class="btn btn-primary px-3 d-none d-lg-block">Get A Quote</a> --}}
+        
     </div>
 </nav>
 <!-- Navbar End -->

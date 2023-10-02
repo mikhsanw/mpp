@@ -103,6 +103,34 @@
 
     @include('layouts.frontend.footer')
 
+    <!-- Modal -->
+    <div class="modal fade" id="maklumatpelayanan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+            <div class="modal-body">
+                <img src="{{asset('assets')}}/img/maklumatpelayanan.png" alt="" class="img-fluid">
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="sop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+            <div class="modal-body">
+                <img src="{{asset('assets')}}/img/sop.png" alt="" class="img-fluid">
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="probis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+            <div class="modal-body">
+                <img src="{{asset('assets')}}/img/probis.png" alt="" class="img-fluid">
+            </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Copyright Start -->
     <div class="container-fluid bg-white copyright py-4">

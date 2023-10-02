@@ -24,4 +24,9 @@ class Instansi extends Model
         return $this->morphOne(File::class, 'morph');
     }
 
+    public function layanans()
+    {
+        return $this->hasMany('App\Model\Layanan');
+    }
+
 }

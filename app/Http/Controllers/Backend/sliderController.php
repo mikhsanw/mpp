@@ -59,7 +59,7 @@ class sliderController extends Controller
         if ($request->ajax()) {
             $validator=Validator::make($request->all(), [
                 'nama'             => 'required|'.config('master.regex.json'),
-                'file_foto'        => 'required|mimes:jpg,png,jpeg'
+                'file_foto'        => 'required|mimes:jpg,png,jpeg,webp'
                 ]);
             if ($validator->fails()) {
                 $respon=['status'=>false, 'pesan'=>$validator->messages()];
@@ -121,7 +121,7 @@ class sliderController extends Controller
         if ($request->ajax()) {
             $validator=Validator::make($request->all(), [
                 'nama'             => 'required|'.config('master.regex.json'),
-                'file_foto'        => $request->hasFile('file_foto') ? 'required|mimes:jpg,png,jpeg' : ''
+                'file_foto'        => $request->hasFile('file_foto') ? 'required|mimes:jpg,png,jpeg,webp' : ''
             ]);
             if ($validator->fails()) {
                 $response=['status'=>FALSE, 'pesan'=>$validator->messages()];

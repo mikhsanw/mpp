@@ -7,7 +7,7 @@
             <div class="carousel-inner">
                 @foreach($slider as $row => $item)
                 <div class="carousel-item {{$row==0?'active':''}}">
-                    <img class="w-100" src="{{asset($item->file->url_stream)}}" alt="Image">
+                    <img class="w-100 img-fluid" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
                     {{-- <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -52,13 +52,13 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <p class="fw-medium text-uppercase text-primary mb-2">Tentang Kami</p>
-                    <h1 class="display-5 mb-4 text-primary">Sekilas MPP Kab. Bengkalis</h1>
+                    <h1 class="display-5 mb-4 text-primary">Sekilas MPP <br> Kabupaten Bengkalis</h1>
                     <p class="mb-4" style="text-align: justify">
                         MPP dirancang oleh KEMEPAN RB sebagai bagian dari perbaikan menyeluruh dan transformasi tata kelola pelayanan publik. Menggabungkan berbagai jenis pelayanan pada satu tempat, 
                         penyederhaan dan prosedur serta integrasi pelayanan pada Mal Pelayanan Publik akan memudahkan akses masyarakat dalam mendapat berbagai jenis pelayanan, serta meningkatkan kepercayaan masyarakat kepada penyelenggara pelayanan publik.
                     </p>
                     <div class="d-flex align-items-center mb-4">
-                        <div class="flex-shrink-0 bg-primary p-4">
+                        <div class="flex-shrink-0 bg-primary pt-1 pb-2 ps-3 pe-3">
                             <h1 class="display-2 text-white">{{$jumlah['instansi']}}</h1>
                             <h5 class="text-white">Instansi</h5>
                             <h5 class="text-white">Siap Melayani</h5>
@@ -73,25 +73,26 @@
                         </div>
                     </div>
                     <div class="row pt-2">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-envelope-open text-white"></i>
-                                </div>
+                        <div class="col-sm-12 d-flex align-items-center">
+                            <div class="">
                                 <div class="ms-3">
-                                    <p class="mb-2">Email Kami</p>
-                                    <h6 class="mb-0">{!!($kontak->filterkontak('email')->link ?? '')!!}</h6>
+                                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#maklumatpelayanan">
+                                        <i class="fas fa-award text-white"></i> Maklumat Pelayanan
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-phone-alt text-white"></i>
-                                </div>
+                            <div class="">
                                 <div class="ms-3">
-                                    <p class="mb-2">Hubungi Kami</p>
-                                    <h6 class="mb-0">{!!($kontak->filterkontak('telp')->link ?? '')!!}</h6>
+                                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#sop">
+                                        <i class="fas fa-exchange-alt text-white"></i> Standart Oprasional Prosedur
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="ms-3">
+                                    <button type="button" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#probis">
+                                        <i class="far fa-check-circle text-white"></i> Proses Bisnis
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +111,7 @@
                 <div class="text-center border p-5">
                     <i class="fa fa-certificate fa-3x text-white mb-3"></i>
                     <h1 class="display-2 text-white mb-0" data-toggle="counter-up">{{$jumlah['instansi']}}</h1>
-                    <span class="fs-5 fw-semi-bold text-white">Jumlah Instansi</span>
+                    <span class="fs-5 fw-semi-bold text-white">Jumlah Unit Layanan</span>
                 </div>
             </div>
             <div class="col-md-6 col-xl-3 wow fadeIn" data-wow-delay="0.3s">
@@ -144,7 +145,7 @@
         <div class="container">
             <div class="text-left pb-4 wow fadeInLeft" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Fasilitas</p>
-                <h1 class="display-5 text-primary mb-4">Fasilitas MPP Kab. Bengkalis</h1>
+                <h1 class="display-5 text-primary mb-4">Fasilitas MPP <br> Kabupaten Bengkalis</h1>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-12" data-wow-delay="0.5s">
@@ -160,7 +161,7 @@
                                 <div class="tab-pane fade {{$row == 0 ? 'show active' : ''}}" id="v-pills-{{$row}}" role="tabpanel" aria-labelledby="v-pills-{{$row}}-tab">
                                     <h6 class="fw-medium text-uppercase text-primary mb-2">{{$item->nama}}</h6>
                                     <p style="text-align: justify">{{$item->keterangan}}</p>
-                                    <img class="img-fluid img-fasilitas" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
+                                    <img class="w-50 img-fluid img-fasilitas" src="{{asset($item->file->url_stream)}}" alt="{{$item->nama}}">
                                 </div>
                                 @endforeach
                             </div>
@@ -200,7 +201,7 @@
         <div class="container">
             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Berita</p>
-                <h1 class="display-5 mb-4 text-primary">Berita Seputar MPP Kab. Bengkalis</h1>
+                <h1 class="display-5 mb-4 text-primary">Berita Seputar MPP <br> Kabupaten Bengkalis</h1>
             </div>
             <div class="btn-kumpulan">
                 <a href="{{url('/company/kumpulan-berita')}}" class="btn btn-primary py-3 px-5 wow fadeInLeft"><i class="fa fa-list"></i> Kumpulan Berita</a>
@@ -237,7 +238,7 @@
     <div class="container-fluid bg-red pt-5 my-5 px-0" id="galeri">
         <div class="text-center mx-auto mt-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
             <p class="fw-medium text-uppercase text-white mb-2">Galeri</p>
-            <h1 class="display-5 text-white mb-5">Galeri MPP Kab. Bengkalis</h1>
+            <h1 class="display-5 text-white mb-5">Galeri MPP <br> Kabupaten Bengkalis</h1>
         </div>
         <div class="owl-carousel project-carousel wow fadeIn" data-wow-delay="0.1s" id="lightgallery">
 
@@ -258,8 +259,8 @@
     <div class="container-xxl py-5" id="instansi">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="fw-medium text-uppercase text-primary mb-2">Instansi</p>
-                <h1 class="display-5 text-primary mb-5">Instansi Pada MPP <br>Kab. Bengkalis</h1>
+                <p class="fw-medium text-uppercase text-primary mb-2">Unit Layanan</p>
+                <h1 class="display-5 text-primary mb-5">Unit Layanan MPP <br> Kabupaten Bengkalis</h1>
             </div>
             <div class="row g-4">
                 <div class="btn-kumpulan">
@@ -279,7 +280,6 @@
                                 <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4"
                                     style="height: 90px;">
                                     <h6>{{$item->nama}}</h6>
-                                    <span class="text-primary">{{$item->alamat}}</span>
                                     <div class="team-social d-flex">
                                         <div class="d-flex" style="align-items: center; margin-right: 15px;">
                                             <a class="btn btn-square btn-dark rounded-circle mx-1" href="">
@@ -396,7 +396,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-light text-center h-100 p-5">
+                    <div class="bg-light text-center h-100 p-5 alamat">
                         <div class="btn-square bg-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
                             <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
                         </div>
@@ -410,9 +410,9 @@
             <div class="row mb-5">
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
                     <iframe class="w-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15954.051660848709!2d102.11749254726503!3d1.4657016263280322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d15e36b4c4ad2f%3A0xfe6a8b2b1d4df01f!2sDinas%20Penanaman%20Modal%20dan%20Pelayanan%20Terpadu%20Satu%20Pintu!5e0!3m2!1sid!2sid!4v1692782649492!5m2!1sid!2sid"
-                        frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.2557363395633!2d102.10937118878667!3d1.4665112809622423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d15f56fc0a4ddd%3A0x850efe9e95f58e72!2sGedung%20Pelayanan%20Publik%20Bengkalis!5e0!3m2!1sid!2sid!4v1693795477369!5m2!1sid!2sid"
+                    frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
                 </div>
             </div>
             <div class="row g-5" id="Pengaduan">
@@ -491,3 +491,9 @@
 
     </script>
 @endsection
+@push('css')
+<style>
+    .alamat font {
+        color : #5F656F;
+    }
+</style>

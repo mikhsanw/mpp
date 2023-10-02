@@ -5,36 +5,6 @@
 		<p>
 			<label class="control-label">Hapus data <strong>{{ $data->nama }}</strong>?</label>
 		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->alamat }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->telepon }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->tracking }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->email }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->website }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->layanan }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->dasarhukum }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->persyaratan }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->waktudanbiaya }}</strong>?</label>
-		</p>
-		<p>
-			<label class="control-label">Hapus data <strong>{{ $data->alur }}</strong>?</label>
-		</p>
 
 
 	</div>

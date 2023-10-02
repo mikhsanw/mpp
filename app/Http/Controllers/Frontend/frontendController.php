@@ -28,9 +28,9 @@ class frontendController extends Controller
                 'layanan' => Layanan::count(),
             ],
             'tentang' => Halaman::where('jenis',0)->whereNull('parent_id')->first(),
-            'instansi' => Instansi::orderBy('id','desc')->take(3)->get(),
+            'instansi' => Instansi::orderBy('id','asc')->take(3)->get(),
             'foto' => Foto::where('status',0)->orderBy('id','desc')->get(),
-            'fasilitas' => Fasilitas::get(),
+            'fasilitas' => Fasilitas::all(),
 
         );
         return view('frontend.beranda.index',$data);

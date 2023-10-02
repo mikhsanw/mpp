@@ -20,7 +20,7 @@
             <p class="fw-medium text-uppercase text-primary mb-2">Berita Selengkapnya</p>
             <h1 class="display-5 mb-5">{{$data->nama}}</h1>
         </div>
-        <div class="text-justify">
+        <div class="text-justify img-content">
             <p class="mb-4">
                 {!!$data->isi!!}
             </p>
@@ -29,6 +29,13 @@
 </div>
     
 @endsection
+@push('css')
+    <style>
+        .img-content img{
+            max-width: 100%;
+        }
+    </style>
+@endpush
 @push('js')
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];

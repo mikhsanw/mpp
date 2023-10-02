@@ -31,10 +31,6 @@
 			{!! Form::text('website', null, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
-			{!! Form::label('layanan', 'Masukkan Layanan', ['class'=>'control-label']) !!}
-			{!! Form::textarea('layanan', null, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
-		</p>
-		<p>
 			{!! Form::label('dasarhukum', 'Masukkan Dasarhukum', ['class'=>'control-label']) !!}
 			{!! Form::textarea('dasarhukum', null, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
 		</p>
