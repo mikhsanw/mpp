@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'frontendController@index');
 Route::prefix('company')->as('company')->group(function () {
-    Route::get('/page/{id}/{seo?}', 'contentController@index');
+    Route::get('/page/{id}/{seo?}', 'contentController@halaman');
     Route::get('/galeri/{jenis}', 'contentController@galeri');
     Route::get('/info/{id}', 'contentController@informasi');
     Route::get('/berita', 'contentController@berita');

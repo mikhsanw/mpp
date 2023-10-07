@@ -33,6 +33,14 @@ class contentController extends Controller
         );
         return view('frontend.beranda.index',$arr);
     }
+    public function halaman($id)
+    {
+        $arr=array(
+        'data' => Halaman::find($id),
+        'doc' => File::whereMorphId($id)->orderBy('id','desc')->get(),
+        );
+        return view('frontend.beranda.halaman',$arr);
+    }
     public function galeri($jenis)
     {
         if($jenis==='foto'){

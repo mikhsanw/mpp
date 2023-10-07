@@ -159,7 +159,10 @@
     </div>
 </section><!-- #content end -->
 @endif
-
+<a href="https://wa.me/{!!($kontak->filterkontak('telp')->link ?? '#')!!}?text=Hi%20Qiscus" class="floating" target="_blank">
+<i class="fab fa-whatsapp fab-icon"></i> 
+<span class="text">Klinik Laksamana</span>
+</a>
 @endsection
 @push('css')
 <style>
@@ -178,5 +181,39 @@
         line-height: 1;
     }
 
+</style>
+
+<!-- add your custom CSS -->
+<style>
+
+/* Add WA floating button CSS */
+.floating {
+    position: fixed;
+    display:flex;
+    bottom: 90px;
+    right: 30px;
+    width: 140px;
+    height: 50px;
+    padding-top: 5px;
+    justify-content:center;
+    /* font-size: 30px; */
+    cursor: pointer;
+    z-index: 9000;
+
+    background-color: rgb(41,167,26);
+color: #fff;
+border-radius: 50px;
+text-align: center;
+box-shadow: 2px 2px 3px #999;
+
+.text{
+    font-size:14px;
+}
+}
+
+.fab-icon {
+margin-left: 8px;
+font-size: 40px;
+}
 </style>
 @endpush
