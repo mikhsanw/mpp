@@ -9,7 +9,7 @@
             <ol class="breadcrumb  slideInRight mb-0">
                 <li class="breadcrumb-item"><a href="#">Beranda</a></li>
                 <li class="breadcrumb-item"><a href="#">Halaman</a></li>
-                <li class="breadcrumb-item active" aria-current="page">$data->nama</li>
+                <li class="breadcrumb-item active" aria-current="page">{{$data->nama}}</li>
             </ol>
         </nav>
     </div>
@@ -202,12 +202,13 @@
 
     background-color: rgb(41,167,26);
 color: #fff;
-border-radius: 50px;
+border-radius: 20px;
 text-align: center;
-box-shadow: 2px 2px 3px #999;
+box-shadow: 1px 1px 3px #999;
 
 .text{
     font-size:14px;
+    font-weight: bold;
 }
 }
 
