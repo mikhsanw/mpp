@@ -31,7 +31,7 @@
 		</p>
 		<p>
 			{!! Form::label('website', 'Masukkan Website', ['class'=>'control-label']) !!}
-			{!! Form:: js-summernote('website', $data->website, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
+			{!! Form::textarea('website', $data->website, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
 			{!! Form::label('dasarhukum', 'Masukkan Dasarhukum', ['class'=>'control-label']) !!}
