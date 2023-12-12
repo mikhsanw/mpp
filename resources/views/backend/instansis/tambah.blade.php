@@ -28,7 +28,7 @@
 		</p>
 		<p>
 			{!! Form::label('website', 'Masukkan Website', ['class'=>'control-label']) !!}
-			{!! Form::text('website', null, array('id' => 'nama', 'class' => 'form-control', 'autocomplete' => 'off')) !!}
+			{!! Form::textarea('website', null, array('id' => 'nama', 'class' => 'form-control js-summernote', 'autocomplete' => 'off')) !!}
 		</p>
 		<p>
 			{!! Form::label('dasarhukum', 'Masukkan Dasarhukum', ['class'=>'control-label']) !!}

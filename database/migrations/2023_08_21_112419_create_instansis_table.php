@@ -20,7 +20,7 @@ class CreateInstansisTable extends Migration
 			$table->string('telepon',15)->nullable();
 			$table->string('tracking')->nullable();
 			$table->string('email',30)->nullable();
-			$table->string('website',30)->nullable();
+			$table->text('website')->nullable();
 			$table->text('layanan')->nullable();
 			$table->text('dasarhukum')->nullable();
 			$table->text('persyaratan')->nullable();
