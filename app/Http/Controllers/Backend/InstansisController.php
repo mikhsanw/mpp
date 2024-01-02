@@ -59,10 +59,10 @@ class InstansisController extends Controller
 					'tracking' => 'required|'.config('master.regex.text'),
 					'email' => 'required',
 					'website' => 'required',
-					'dasarhukum' => 'required|'.config('master.regex.json'),
-					'persyaratan' => 'required|'.config('master.regex.json'),
-					'waktudanbiaya' => 'required|'.config('master.regex.json'),
-					'alur' => 'required|'.config('master.regex.json'),
+					'dasarhukum' => 'required',
+					'persyaratan' => 'required',
+					'waktudanbiaya' => 'required',
+					'alur' => 'required',
                     'logo_instansi' => 'required|mimes:jpg,jpeg,png'
                 ]);
             if ($validator->fails()) {
@@ -130,10 +130,10 @@ class InstansisController extends Controller
                 'tracking' => 'required|'.config('master.regex.text'),
                 'email' => 'required',
                 'website' => 'required',
-                'dasarhukum' => 'required|'.config('master.regex.json'),
-                'persyaratan' => 'required|'.config('master.regex.json'),
-                'waktudanbiaya' => 'required|'.config('master.regex.json'),
-                'alur' => 'required|'.config('master.regex.json'),
+                'dasarhukum' => 'required',
+                'persyaratan' => 'required',
+                'waktudanbiaya' => 'required',
+                'alur' => 'required',
                 'logo_instansi'        => $request->hasFile('logo_instansi') ? 'required|mimes:jpg,png,jpeg' : ''
             ]);
             if ($validator->fails()) {
