@@ -87,10 +87,12 @@
                     <hr>
                 </div>
                 <div>
-                    <h6>Website</h6>
-                    <div class="d-flex justify-content-between">
-                        <p>{{$data->website}}</p>
+                    <div class="d-flex  justify-content-between">
+                        <h6>Website</h6>
                         <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="">
+                        <p>{!!$data->website!!}</p>
                     </div>
                     <hr>
                 </div>
